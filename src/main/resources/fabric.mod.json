@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "nationsmod",
+	"version": "${version}",
+	"name": "Nations Mod",
+	"description": "Mod for the Nations SMP",
+	"authors": [
+		"mabli",
+		"ProctoredGames"
+	],
+	"contact": {
+		"homepage": "https://proctoredgames.net/",
+		"sources": "https://github.com/ProctoredGames/Nations-Mod"
+	},
+	"license": "MIT",
+	"icon": "assets/nationsmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.proctoredgames.nationsmod.NationsMod"
+		],
+		"fabric-datagen": [
+			"net.proctoredgames.nationsmod.NationsModDataGenerator"
+		],
+		"client": [
+			"net.proctoredgames.nationsmod.NationsModClient"
+		]
+	},
+	"mixins": [
+		"nationsmod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
