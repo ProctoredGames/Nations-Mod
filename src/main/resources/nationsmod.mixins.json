@@ -3,7 +3,9 @@
 	"package": "net.proctoredgames.nationsmod.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"VillagerEntityMixin",
+		"VillagerRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
