@@ -2,6 +2,8 @@ package net.proctoredgames.nationsmod;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.proctoredgames.nationsmod.item.ModItemGroups;
+import net.proctoredgames.nationsmod.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,6 +13,8 @@ public class NationsMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModItemGroups.registerItemGroups();
 
+		ModItems.registerModItems();
 	}
 }
