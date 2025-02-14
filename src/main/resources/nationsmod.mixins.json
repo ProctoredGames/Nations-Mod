@@ -4,8 +4,7 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"ExampleMixin",
-		"VillagerEntityMixin",
-		"VillagerRendererMixin"
+		"VillagerEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

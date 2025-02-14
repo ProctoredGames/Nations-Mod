@@ -1,7 +1,15 @@
+package net.proctoredgames.nationsmod.entity.client.villagers;
+
+import net.minecraft.client.model.*;
+import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.entity.model.EntityModel;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.Entity;
+
 // Made with Blockbench 4.12.2
 // Exported for Minecraft version 1.17+ for Yarn
 // Paste this class into your mod and generate all required imports
-public class MalbiNationsCatVillager extends EntityModel<Entity> {
+public class MalbiNationsCatVillagerModel extends EntityModel<Entity> {
     private final ModelPart head;
     private final ModelPart headwear;
     private final ModelPart headwear2;
@@ -42,7 +50,7 @@ public class MalbiNationsCatVillager extends EntityModel<Entity> {
     private final ModelPart bone2;
     private final ModelPart right_leg;
     private final ModelPart left_leg;
-    public MalbiNationsCatVillager(ModelPart root) {
+    public MalbiNationsCatVillagerModel(ModelPart root) {
         this.head = root.getChild("head");
         this.headwear = root.getChild("headwear");
         this.headwear2 = root.getChild("headwear2");
@@ -193,19 +201,14 @@ public class MalbiNationsCatVillager extends EntityModel<Entity> {
         ModelPartData left_leg = modelPartData.addChild("left_leg", ModelPartBuilder.create(), ModelTransform.pivot(2.0F, 12.0F, 0.0F));
         return TexturedModelData.of(modelData, 64, 64);
     }
+
     @Override
-    public void setAngles(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setAngles(Entity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+
     }
+
     @Override
-    public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
-        head.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-        headwear.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-        headwear2.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-        nose.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-        body.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-        bodywear.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-        arms.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-        right_leg.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-        left_leg.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
+    public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
+
     }
 }
