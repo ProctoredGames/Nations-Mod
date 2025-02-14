@@ -2,14 +2,14 @@ package net.proctoredgames.nationsmod.entity.client.villagers;
 
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
-import net.minecraft.client.render.entity.model.EntityModel;
+import net.minecraft.client.render.entity.model.*;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 
 // Made with Blockbench 4.12.2
 // Exported for Minecraft version 1.17+ for Yarn
 // Paste this class into your mod and generate all required imports
-public class MalbiNationsCatVillagerModel extends EntityModel<Entity> {
+public class MalbiNationsCatVillagerModel<T extends Entity> extends VillagerResemblingModel<T> {
     private final ModelPart head;
     private final ModelPart headwear;
     private final ModelPart headwear2;
@@ -51,6 +51,7 @@ public class MalbiNationsCatVillagerModel extends EntityModel<Entity> {
     private final ModelPart right_leg;
     private final ModelPart left_leg;
     public MalbiNationsCatVillagerModel(ModelPart root) {
+        super(root);
         this.head = root.getChild("head");
         this.headwear = root.getChild("headwear");
         this.headwear2 = root.getChild("headwear2");
@@ -210,5 +211,20 @@ public class MalbiNationsCatVillagerModel extends EntityModel<Entity> {
     @Override
     public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
 
+    }
+
+    @Override
+    public ModelPart getPart() {
+        return null;
+    }
+
+    @Override
+    public void setHatVisible(boolean visible) {
+
+    }
+
+    @Override
+    public ModelPart getHead() {
+        return null;
     }
 }
