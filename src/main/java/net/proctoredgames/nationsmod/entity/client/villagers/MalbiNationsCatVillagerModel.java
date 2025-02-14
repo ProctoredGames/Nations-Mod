@@ -5,11 +5,14 @@ import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.*;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.MerchantEntity;
+import net.minecraft.util.math.MathHelper;
 
 // Made with Blockbench 4.12.2
 // Exported for Minecraft version 1.17+ for Yarn
 // Paste this class into your mod and generate all required imports
-public class MalbiNationsCatVillagerModel<T extends Entity> extends VillagerResemblingModel<T> {
+public class MalbiNationsCatVillagerModel<T extends Entity> extends SinglePartEntityModel<T> implements ModelWithHead, ModelWithHat {
+    private final ModelPart root;
     private final ModelPart head;
     private final ModelPart headwear;
     private final ModelPart headwear2;
@@ -51,7 +54,7 @@ public class MalbiNationsCatVillagerModel<T extends Entity> extends VillagerRese
     private final ModelPart right_leg;
     private final ModelPart left_leg;
     public MalbiNationsCatVillagerModel(ModelPart root) {
-        super(root);
+        this.root = root;
         this.head = root.getChild("head");
         this.headwear = root.getChild("headwear");
         this.headwear2 = root.getChild("headwear2");
@@ -204,27 +207,41 @@ public class MalbiNationsCatVillagerModel<T extends Entity> extends VillagerRese
     }
 
     @Override
-    public void setAngles(Entity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
-
-    }
-
-    @Override
-    public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
-
-    }
-
-    @Override
     public ModelPart getPart() {
-        return null;
+        return this.root;
     }
 
     @Override
-    public void setHatVisible(boolean visible) {
+    public void setAngles(T entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+        boolean bl = false;
+        if (entity instanceof MerchantEntity) {
+            bl = ((MerchantEntity)entity).getHeadRollingTimeLeft() > 0;
+        }
 
+        this.head.yaw = headYaw * (float) (Math.PI / 180.0);
+        this.head.pitch = headPitch * (float) (Math.PI / 180.0);
+        if (bl) {
+            this.head.roll = 0.3F * MathHelper.sin(0.45F * animationProgress);
+            this.head.pitch = 0.4F;
+        } else {
+            this.head.roll = 0.0F;
+        }
+
+        this.right_leg.pitch = MathHelper.cos(limbAngle * 0.6662F) * 1.4F * limbDistance * 0.5F;
+        this.left_leg.pitch = MathHelper.cos(limbAngle * 0.6662F + (float) Math.PI) * 1.4F * limbDistance * 0.5F;
+        this.right_leg.yaw = 0.0F;
+        this.left_leg.yaw = 0.0F;
     }
 
     @Override
     public ModelPart getHead() {
-        return null;
+        return this.head;
+    }
+
+    @Override
+    public void setHatVisible(boolean visible) {
+        this.head.visible = visible;
+//        this.hat.visible = visible;
+//        this.hatRim.visible = visible;
     }
 }
