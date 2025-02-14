@@ -47,29 +47,29 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
                 this.features.clear();
                 switch(textureId){
                     case 1:
-                        loadVanillaModel();
+                        loadNationsModel();
                         break;
                     case 2:
-                        loadVanillaModel();
+                        loadNationsModel();
                         break;
                     case 3:
-                        loadVanillaModel();
+                        loadNationsModel();
                         break;
                     case 4:
                         super.model = new MalbiNationsCatVillagerModel<>(context.getPart(ModModelLayers.NATION_4_VILLAGER));
                         this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
                         break;
                     case 5:
-                        loadVanillaModel();
+                        loadNationsModel();
                         break;
                     case 6:
-                        loadVanillaModel();
+                        loadNationsModel();
                         break;
                     case 7:
-                        loadVanillaModel();
+                        loadNationsModel();
                         break;
                     case 8:
-                        loadVanillaModel();
+                        loadNationsModel();
                         break;
                     default:
                         loadVanillaModel();
@@ -100,6 +100,11 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
         super.model = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
         this.addFeature(new HeadFeatureRenderer<>((FeatureRendererContext)this, context.getModelLoader(), context.getHeldItemRenderer()));
         this.addFeature(new VillagerClothingFeatureRenderer<>((FeatureRendererContext)this, context.getResourceManager(), "villager"));
+        this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
+    }
+
+    private void loadNationsModel(){
+        super.model = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
         this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
     }
 }
