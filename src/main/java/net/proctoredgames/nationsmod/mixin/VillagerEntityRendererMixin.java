@@ -14,7 +14,7 @@ import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.util.Identifier;
 import net.proctoredgames.nationsmod.NationsMod;
 import net.proctoredgames.nationsmod.entity.client.ModModelLayers;
-import net.proctoredgames.nationsmod.entity.client.villagers.MalbiNationsCatVillagerModel;
+import net.proctoredgames.nationsmod.entity.client.villagers.Nation4CatVillager;
 import net.proctoredgames.nationsmod.villager.ModVillagers;
 import net.proctoredgames.nationsmod.villager.NationVillager;
 import org.spongepowered.asm.mixin.Mixin;
@@ -25,12 +25,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(VillagerEntityRenderer.class)
-public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<VillagerEntity, SinglePartEntityModel<VillagerEntity>> {
+public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<VillagerEntity, VillagerResemblingModel<VillagerEntity>> {
     private EntityRendererFactory.Context context;
     private int lastTextureId = 0;
 
     public VillagerEntityRendererMixin(EntityRendererFactory.Context context) {
-        super(context, new MalbiNationsCatVillagerModel<>(context.getPart(EntityModelLayers.VILLAGER)), 0.5F);
+        super(context, new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER)), 0.5F);
     }
 
     @Inject(method = "<init>", at = @At("TAIL"), cancellable = false)
@@ -56,7 +56,7 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
                         loadNationsModel();
                         break;
                     case 4:
-                        super.model = new MalbiNationsCatVillagerModel<>(context.getPart(ModModelLayers.NATION_4_VILLAGER));
+                        super.model = new Nation4CatVillager(context.getPart(ModModelLayers.NATION_4_VILLAGER));
                         this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
                         break;
                     case 5:
@@ -75,8 +75,6 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
                         loadVanillaModel();
                         break;
                 }
-                this.model.handSwingProgress = 0;
-                this.model.animateModel(villager, 0,0,0);
             }
 
             Identifier texture = switch (textureId) {

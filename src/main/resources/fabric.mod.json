@@ -5,14 +5,14 @@
 	"name": "Nations Mod",
 	"description": "Mod for the Nations SMP",
 	"authors": [
-		"mabli",
-		"ProctoredGames"
+		"Mabli - Modeling and Texturing",
+		"ProctoredGames - Developer"
 	],
 	"contact": {
 		"homepage": "https://proctoredgames.net/",
 		"sources": "https://github.com/ProctoredGames/Nations-Mod"
 	},
-	"license": "MIT",
+	"license": "ARR",
 	"icon": "assets/nationsmod/icon.png",
 	"environment": "*",
 	"entrypoints": {
