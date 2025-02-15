@@ -9,7 +9,7 @@
       "item": "minecraft:string"
     },
     "*": {
-      "item": "minecraft:wind_charge"
+      "item": "minecraft:blue_wool"
     }
   },
   "pattern": [

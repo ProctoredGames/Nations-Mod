@@ -24,6 +24,15 @@ public class ModItemGroups {
                         entries.add(ModItems.ESSENCE_OF_NATION_7);
                         entries.add(ModItems.ESSENCE_OF_NATION_8);
 
+                        entries.add(ModItems.NATION_1_ELYTRA);
+                        entries.add(ModItems.NATION_2_ELYTRA);
+                        entries.add(ModItems.NATION_3_ELYTRA);
+                        entries.add(ModItems.NATION_4_ELYTRA);
+                        entries.add(ModItems.NATION_5_ELYTRA);
+                        entries.add(ModItems.NATION_6_ELYTRA);
+                        entries.add(ModItems.NATION_7_ELYTRA);
+                        entries.add(ModItems.NATION_8_ELYTRA);
+
                     }).build());
 
 
