@@ -55,6 +55,7 @@ public abstract class LivingEntityNationElytraMixin extends Entity implements At
 
     private final Map<RegistryEntry<StatusEffect>, StatusEffectInstance> activeStatusEffects = Maps.<RegistryEntry<StatusEffect>, StatusEffectInstance>newHashMap();
 
+
     protected LivingEntityNationElytraMixin(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
     }
@@ -62,7 +63,8 @@ public abstract class LivingEntityNationElytraMixin extends Entity implements At
 
     @Inject(method = "tickFallFlying", at = @At("HEAD"), cancellable = true)
     private void customTickFallFlying(CallbackInfo ci) {
-        boolean bl = true;
+        boolean bl = this.getFlag(Entity.FALL_FLYING_FLAG_INDEX);
+
         if (bl && !this.isOnGround() && !this.hasVehicle() && !this.hasStatusEffect(StatusEffects.LEVITATION)) {
             ItemStack itemStack = this.getEquippedStack(EquipmentSlot.CHEST);
             if (itemStack.getItem() instanceof ElytraItem && ElytraItem.isUsable(itemStack)) {

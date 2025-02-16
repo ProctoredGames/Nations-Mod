@@ -6,6 +6,7 @@
 		"VillagerEntityMixin",
 		"VillagerEntityRendererMixin",
 		"ElytraFeatureRendererMixin",
+		"PlayerEntityNationElytraMixin",
 		"LivingEntityNationElytraMixin"
 	],
 	"injectors": {

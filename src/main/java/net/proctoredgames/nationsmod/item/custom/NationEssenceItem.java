@@ -8,17 +8,24 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.proctoredgames.nationsmod.NationBased;
 import net.proctoredgames.nationsmod.mixin.VillagerEntityMixin;
 
-public class NationEssenceItem extends Item implements NationItem{
+public class NationEssenceItem extends Item implements NationBased {
     public int nation;
 
     public NationEssenceItem(Settings settings, int pNation) {
         super(settings);
-        this.nation = pNation;
+        setNation(pNation);
     }
 
-    public int getNation(){
+    @Override
+    public void setNation(int key) {
+        this.nation = key;
+    }
+
+    @Override
+    public int getNation() {
         return this.nation;
     }
 }

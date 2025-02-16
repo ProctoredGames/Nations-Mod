@@ -8,17 +8,14 @@ import net.minecraft.client.render.entity.feature.HeadFeatureRenderer;
 import net.minecraft.client.render.entity.feature.VillagerClothingFeatureRenderer;
 import net.minecraft.client.render.entity.feature.VillagerHeldItemFeatureRenderer;
 import net.minecraft.client.render.entity.model.EntityModelLayers;
-import net.minecraft.client.render.entity.model.SinglePartEntityModel;
 import net.minecraft.client.render.entity.model.VillagerResemblingModel;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.util.Identifier;
 import net.proctoredgames.nationsmod.NationsMod;
 import net.proctoredgames.nationsmod.entity.client.ModModelLayers;
 import net.proctoredgames.nationsmod.entity.client.villagers.Nation4CatVillager;
-import net.proctoredgames.nationsmod.villager.ModVillagers;
-import net.proctoredgames.nationsmod.villager.NationVillager;
+import net.proctoredgames.nationsmod.NationBased;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -40,8 +37,8 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
 
     @Inject(method = "getTexture", at = @At("HEAD"), cancellable = true)
     private void getModifiedAppearance(VillagerEntity villager, CallbackInfoReturnable<Identifier> cir) {
-        if(villager instanceof NationVillager && context != null){
-            int textureId = ((NationVillager) villager).getNation();
+        if(villager instanceof NationBased && context != null){
+            int textureId = ((NationBased) villager).getNation();
 
             if(lastTextureId != textureId){
                 this.features.clear();
