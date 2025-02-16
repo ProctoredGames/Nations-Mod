@@ -10,9 +10,7 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.effect.EnchantmentLocationBasedEffect;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.brain.Brain;
-import net.minecraft.entity.attribute.AttributeContainer;
-import net.minecraft.entity.attribute.DefaultAttributeRegistry;
-import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.*;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageTracker;
 import net.minecraft.entity.data.DataTracker;
@@ -23,7 +21,6 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ElytraItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
@@ -36,31 +33,66 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
-import net.proctoredgames.nationsmod.item.custom.NationElytraItem;
+import net.proctoredgames.nationsmod.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
 @Mixin(LivingEntity.class)
-public abstract class LivingEntityNationElytraMixin {
-    @Redirect(
-            method = "tickFallFlying",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/item/ItemStack;isOf(Lnet/minecraft/item/Item;)Z"
-            )
-    )
-    private boolean redirectElytraCheck(ItemStack stack, Item item) {
-        // Allow both vanilla Elytra and custom Elytra
-        return stack.isOf(Items.ELYTRA) || stack.getItem() instanceof NationElytraItem;
+public abstract class LivingEntityNationElytraMixin extends Entity implements Attackable {
+    protected int fallFlyingTicks;
+
+    private final Map<RegistryEntry<StatusEffect>, StatusEffectInstance> activeStatusEffects = Maps.<RegistryEntry<StatusEffect>, StatusEffectInstance>newHashMap();
+
+    protected LivingEntityNationElytraMixin(EntityType<? extends LivingEntity> entityType, World world) {
+        super(entityType, world);
     }
+
+
+    @Inject(method = "tickFallFlying", at = @At("HEAD"), cancellable = true)
+    private void customTickFallFlying(CallbackInfo ci) {
+        boolean bl = true;
+        if (bl && !this.isOnGround() && !this.hasVehicle() && !this.hasStatusEffect(StatusEffects.LEVITATION)) {
+            ItemStack itemStack = this.getEquippedStack(EquipmentSlot.CHEST);
+            if (itemStack.getItem() instanceof ElytraItem && ElytraItem.isUsable(itemStack)) {
+                bl = true;
+                int i = this.fallFlyingTicks + 1;
+                if (!this.getWorld().isClient && i % 10 == 0) {
+                    int j = i / 10;
+                    if (j % 2 == 0) {
+                        itemStack.damage(1, (LivingEntity)(Object)this, EquipmentSlot.CHEST);
+                    }
+
+                    this.emitGameEvent(GameEvent.ELYTRA_GLIDE);
+                }
+            } else {
+                bl = false;
+            }
+        } else {
+            bl = false;
+        }
+
+        if (!this.getWorld().isClient) {
+            this.setFlag(Entity.FALL_FLYING_FLAG_INDEX, bl);
+        }
+        ci.cancel();
+    }
+
+    public boolean hasStatusEffect(RegistryEntry<StatusEffect> effect) {
+        return this.activeStatusEffects.containsKey(effect);
+    }
+
+    public abstract ItemStack getEquippedStack(EquipmentSlot slot);
+
 }

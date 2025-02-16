@@ -18,6 +18,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerModelPart;
+import net.minecraft.item.ElytraItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -33,8 +34,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ElytraFeatureRenderer.class)
 public abstract class ElytraFeatureRendererMixin <T extends LivingEntity, M extends EntityModel<T>> extends FeatureRenderer<T, M> {
+    private ElytraEntityModel<T> elytra;
     private static final Identifier SKIN = Identifier.ofVanilla("textures/entity/elytra.png");
-    private final ElytraEntityModel<T> elytra;
 
     public ElytraFeatureRendererMixin(FeatureRendererContext<T, M> context, EntityModelLoader loader) {
         super(context);
@@ -51,7 +52,7 @@ public abstract class ElytraFeatureRendererMixin <T extends LivingEntity, M exte
             float f, float g, float h, float j, float k, float l, CallbackInfo ci
     ) {
         ItemStack itemStack = livingEntity.getEquippedStack(EquipmentSlot.CHEST);
-        if (itemStack.getItem() instanceof NationElytraItem) {
+        if (itemStack.getItem() instanceof ElytraItem) {
             Identifier identifier;
             if (livingEntity instanceof AbstractClientPlayerEntity abstractClientPlayerEntity) {
                 SkinTextures skinTextures = abstractClientPlayerEntity.getSkinTextures();
@@ -60,10 +61,18 @@ public abstract class ElytraFeatureRendererMixin <T extends LivingEntity, M exte
                 } else if (skinTextures.capeTexture() != null && abstractClientPlayerEntity.isPartVisible(PlayerModelPart.CAPE)) {
                     identifier = skinTextures.capeTexture();
                 } else {
-                    identifier = getSkinOfNation(((NationElytraItem) itemStack.getItem()).getNation());
+                    if(itemStack.getItem() instanceof NationElytraItem){
+                        identifier = getSkinOfNation(((NationElytraItem) itemStack.getItem()).getNation());
+                    } else{
+                        identifier = SKIN;
+                    }
                 }
             } else {
-                identifier = getSkinOfNation(((NationElytraItem) itemStack.getItem()).getNation());
+                if(itemStack.getItem() instanceof NationElytraItem){
+                    identifier = getSkinOfNation(((NationElytraItem) itemStack.getItem()).getNation());
+                } else{
+                    identifier = SKIN;
+                }
             }
 
             matrixStack.push();
@@ -78,6 +87,7 @@ public abstract class ElytraFeatureRendererMixin <T extends LivingEntity, M exte
             ci.cancel(); // Cancel the original render
         }
     }
+
     Identifier getSkinOfNation(int nation){
         Identifier texture = switch (nation) {
             case 1 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_1_elytra.png");
