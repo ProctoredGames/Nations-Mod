@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 public class NationsMod implements ModInitializer {
 	public static final String MOD_ID = "nationsmod";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-	public static final String KEY = "Developer - ProctoredGames, @ProctoredGames on Discord";
+	public static final String KEY = "Developer - ProctoredGames, @proctoredgames on Discord";
 
 
 	@Override

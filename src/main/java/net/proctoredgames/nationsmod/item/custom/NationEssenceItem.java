@@ -10,8 +10,8 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.proctoredgames.nationsmod.mixin.VillagerEntityMixin;
 
-public class NationEssenceItem extends Item {
-    public int nation = 1;
+public class NationEssenceItem extends Item implements NationItem{
+    public int nation;
 
     public NationEssenceItem(Settings settings, int pNation) {
         super(settings);

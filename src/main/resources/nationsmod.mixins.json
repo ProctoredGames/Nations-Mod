@@ -4,7 +4,9 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"VillagerEntityMixin",
-		"VillagerEntityRendererMixin"
+		"VillagerEntityRendererMixin",
+		"ElytraFeatureRendererMixin",
+		"LivingEntityNationElytraMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
