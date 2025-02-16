@@ -1,14 +1,16 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "minecraft:elytra"
     },
     {
-      "item": "nations_mod:essence_of_nation_5"
+      "item": "nationsmod:essence_of_nation_5"
     }
   ],
   "result": {
-    "item": "nationsmod:nation_5_elytra"
+    "count": 1,
+    "id": "nationsmod:nation_5_elytra"
   }
 }
