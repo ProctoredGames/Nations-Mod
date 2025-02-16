@@ -34,8 +34,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ElytraFeatureRenderer.class)
 public abstract class ElytraFeatureRendererMixin <T extends LivingEntity, M extends EntityModel<T>> extends FeatureRenderer<T, M> {
-    private ElytraEntityModel<T> elytra;
     private static final Identifier SKIN = Identifier.ofVanilla("textures/entity/elytra.png");
+    private ElytraEntityModel<T> elytra;
 
     public ElytraFeatureRendererMixin(FeatureRendererContext<T, M> context, EntityModelLoader loader) {
         super(context);
