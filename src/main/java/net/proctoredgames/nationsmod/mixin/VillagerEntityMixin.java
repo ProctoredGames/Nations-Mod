@@ -24,7 +24,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(VillagerEntity.class)
-public abstract class VillagerEntityMixin extends PassiveEntity{
+public abstract class VillagerEntityMixin extends PassiveEntity implements NationBased{
 
     @Shadow public abstract VillagerData getVillagerData();
 
@@ -33,11 +33,12 @@ public abstract class VillagerEntityMixin extends PassiveEntity{
     }
 
     @Inject(method = "interactMob", at = @At("HEAD"), cancellable = true)
-    private void changeVillagerBiome(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
+    private void changeVillagerNation(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
         ItemStack stack = player.getStackInHand(hand);
 
         if (stack.getItem() instanceof NationEssenceItem) {
 
+            System.out.println(((NationEssenceItem) stack.getItem()).getNation());
             VillagerEntity villager = (VillagerEntity) (Object) this;
 
             VillagerData oldData = villager.getVillagerData();

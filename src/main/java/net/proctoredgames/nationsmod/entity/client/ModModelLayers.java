@@ -4,7 +4,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 import net.proctoredgames.nationsmod.NationsMod;
-import net.proctoredgames.nationsmod.entity.client.villagers.Nation4CatVillager;
+import net.proctoredgames.nationsmod.entity.client.villagers.Nation4ButcherVillager;
 
 public class ModModelLayers {
     public static final EntityModelLayer NATION_1_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_1_villager"), "main");
@@ -20,7 +20,7 @@ public class ModModelLayers {
 //        EntityModelLayerRegistry.registerModelLayer(NATION_1_VILLAGER, MalbiNationsCatVillagerModel::getTexturedModelData);
 //        EntityModelLayerRegistry.registerModelLayer(NATION_2_VILLAGER, MalbiNationsCatVillagerModel::getTexturedModelData);
 //        EntityModelLayerRegistry.registerModelLayer(NATION_3_VILLAGER, MalbiNationsCatVillagerModel::getTexturedModelData);
-        EntityModelLayerRegistry.registerModelLayer(NATION_4_VILLAGER, Nation4CatVillager::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(NATION_4_VILLAGER, Nation4ButcherVillager::getTexturedModelData);
 //        EntityModelLayerRegistry.registerModelLayer(NATION_5_VILLAGER, MalbiNationsCatVillagerModel::getTexturedModelData);
 //        EntityModelLayerRegistry.registerModelLayer(NATION_6_VILLAGER, MalbiNationsCatVillagerModel::getTexturedModelData);
 //        EntityModelLayerRegistry.registerModelLayer(NATION_7_VILLAGER, MalbiNationsCatVillagerModel::getTexturedModelData);

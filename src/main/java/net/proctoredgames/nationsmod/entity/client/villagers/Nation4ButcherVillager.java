@@ -2,11 +2,14 @@ package net.proctoredgames.nationsmod.entity.client.villagers;
 
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.entity.model.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.MerchantEntity;
+import net.minecraft.util.math.MathHelper;
 
 // Made with Blockbench 4.12.2
 // Exported for Minecraft version 1.17+ for Yarn
 // Paste this class into your mod and generate all required imports
-public class Nation4CatVillager extends VillagerResemblingModel {
+public class Nation4ButcherVillager<T extends Entity> extends VillagerResemblingModel {
     private final ModelPart head;
     private final ModelPart headwear;
     private final ModelPart headwear2;
@@ -36,7 +39,7 @@ public class Nation4CatVillager extends VillagerResemblingModel {
     private final ModelPart hatRim;
     private final ModelPart rightLeg;
     private final ModelPart leftLeg;
-    public Nation4CatVillager(ModelPart root) {
+    public Nation4ButcherVillager(ModelPart root) {
         super(root);
         this.headwear = root.getChild("headwear");
         this.headwear2 = root.getChild("headwear2");
@@ -142,5 +145,43 @@ public class Nation4CatVillager extends VillagerResemblingModel {
         );
 
         return TexturedModelData.of(modelData, 64, 64);
+    }
+    @Override
+    public ModelPart getPart() {
+        return this.root;
+    }
+
+    @Override
+    public void setAngles(Entity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+        boolean bl = false;
+        if (entity instanceof MerchantEntity) {
+            bl = ((MerchantEntity)entity).getHeadRollingTimeLeft() > 0;
+        }
+
+        this.head.yaw = headYaw * (float) (Math.PI / 180.0);
+        this.head.pitch = headPitch * (float) (Math.PI / 180.0);
+        if (bl) {
+            this.head.roll = 0.3F * MathHelper.sin(0.45F * animationProgress);
+            this.head.pitch = 0.4F;
+        } else {
+            this.head.roll = 0.0F;
+        }
+
+        this.rightLeg.pitch = MathHelper.cos(limbAngle * 0.6662F) * 1.4F * limbDistance * 0.5F;
+        this.leftLeg.pitch = MathHelper.cos(limbAngle * 0.6662F + (float) Math.PI) * 1.4F * limbDistance * 0.5F;
+        this.rightLeg.yaw = 0.0F;
+        this.leftLeg.yaw = 0.0F;
+    }
+
+    @Override
+    public ModelPart getHead() {
+        return this.head;
+    }
+
+    @Override
+    public void setHatVisible(boolean visible) {
+        this.head.visible = visible;
+        this.hat.visible = visible;
+        this.hatRim.visible = visible;
     }
 }

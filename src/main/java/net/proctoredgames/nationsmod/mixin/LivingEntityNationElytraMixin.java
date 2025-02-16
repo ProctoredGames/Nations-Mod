@@ -69,7 +69,8 @@ public abstract class LivingEntityNationElytraMixin extends Entity implements At
             ItemStack itemStack = this.getEquippedStack(EquipmentSlot.CHEST);
             if (itemStack.getItem() instanceof ElytraItem && ElytraItem.isUsable(itemStack)) {
                 bl = true;
-                int i = this.fallFlyingTicks + 1;
+                this.fallFlyingTicks++;
+                int i = this.fallFlyingTicks;
                 if (!this.getWorld().isClient && i % 10 == 0) {
                     int j = i / 10;
                     if (j % 2 == 0) {
@@ -95,6 +96,7 @@ public abstract class LivingEntityNationElytraMixin extends Entity implements At
         return this.activeStatusEffects.containsKey(effect);
     }
 
+    @Shadow
     public abstract ItemStack getEquippedStack(EquipmentSlot slot);
 
 }

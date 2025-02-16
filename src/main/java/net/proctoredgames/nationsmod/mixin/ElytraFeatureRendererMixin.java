@@ -1,5 +1,6 @@
 package net.proctoredgames.nationsmod.mixin;
 
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.RenderLayer;
@@ -39,7 +40,6 @@ public abstract class ElytraFeatureRendererMixin <T extends LivingEntity, M exte
 
     public ElytraFeatureRendererMixin(FeatureRendererContext<T, M> context, EntityModelLoader loader) {
         super(context);
-        this.elytra = new ElytraEntityModel<>(loader.getModelPart(EntityModelLayers.ELYTRA));
     }
 
     @Inject(
@@ -53,6 +53,9 @@ public abstract class ElytraFeatureRendererMixin <T extends LivingEntity, M exte
     ) {
         ItemStack itemStack = livingEntity.getEquippedStack(EquipmentSlot.CHEST);
         if (itemStack.getItem() instanceof ElytraItem) {
+            if (elytra == null) { // Initialize model only when needed
+                elytra = new ElytraEntityModel<>(MinecraftClient.getInstance().getEntityModelLoader().getModelPart(EntityModelLayers.ELYTRA));
+            }
             Identifier identifier;
             if (livingEntity instanceof AbstractClientPlayerEntity abstractClientPlayerEntity) {
                 SkinTextures skinTextures = abstractClientPlayerEntity.getSkinTextures();
@@ -61,14 +64,16 @@ public abstract class ElytraFeatureRendererMixin <T extends LivingEntity, M exte
                 } else if (skinTextures.capeTexture() != null && abstractClientPlayerEntity.isPartVisible(PlayerModelPart.CAPE)) {
                     identifier = skinTextures.capeTexture();
                 } else {
-                    if(itemStack.getItem() instanceof NationElytraItem){
+                    Item item = itemStack.getItem();
+                    if(item instanceof NationElytraItem){
                         identifier = getSkinOfNation(((NationElytraItem) itemStack.getItem()).getNation());
                     } else{
                         identifier = SKIN;
                     }
                 }
             } else {
-                if(itemStack.getItem() instanceof NationElytraItem){
+                Item item = itemStack.getItem();
+                if(item instanceof NationElytraItem){
                     identifier = getSkinOfNation(((NationElytraItem) itemStack.getItem()).getNation());
                 } else{
                     identifier = SKIN;
