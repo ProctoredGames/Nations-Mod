@@ -7,6 +7,7 @@ import net.minecraft.client.render.entity.feature.FeatureRendererContext;
 import net.minecraft.client.render.entity.feature.HeadFeatureRenderer;
 import net.minecraft.client.render.entity.feature.VillagerClothingFeatureRenderer;
 import net.minecraft.client.render.entity.feature.VillagerHeldItemFeatureRenderer;
+import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayers;
 import net.minecraft.client.render.entity.model.VillagerResemblingModel;
 import net.minecraft.entity.passive.VillagerEntity;
@@ -25,7 +26,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(VillagerEntityRenderer.class)
-public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<VillagerEntity, VillagerResemblingModel<VillagerEntity>> {
+public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<VillagerEntity, EntityModel<VillagerEntity>> {
     private EntityRendererFactory.Context context;
     private int lastTextureId = 0;
 
@@ -45,8 +46,8 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
 
             if(lastTextureId != textureId){
                 lastTextureId = textureId;
-                VillagerResemblingModel<VillagerEntity> oldModel = super.model;
-                VillagerResemblingModel<VillagerEntity> newModel;
+                EntityModel<VillagerEntity> oldModel = super.model;
+                EntityModel<VillagerEntity> newModel;
                 this.features.clear();
                 switch(textureId){
                     case 1:
@@ -62,23 +63,16 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
                         this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
                         break;
                     case 4:
-//                        if (villager.getVillagerData().getProfession().equals(VillagerProfession.BUTCHER)) {
-//                            System.out.println("new butcher");
-//                            newModel = new Nation4ButcherVillager(context.getPart(ModModelLayers.NATION_4_VILLAGER));
-//                        } else if (villager.getVillagerData().getProfession().equals(VillagerProfession.FISHERMAN)) {
-//                            System.out.println("new fisherman");
-//                            newModel = new Nation4FishermanVillager(context.getPart(ModModelLayers.NATION_4_VILLAGER));
-//                        } else if (villager.getVillagerData().getProfession().equals(VillagerProfession.LIBRARIAN)) {
-//                            System.out.println("new librarian");
-//                            newModel = new Nation4LibrarianVillager(context.getPart(ModModelLayers.NATION_4_VILLAGER));
-//                        } else {
-//                            System.out.println("dont care what type");
-//                            newModel = new Nation4ButcherVillager(context.getPart(ModModelLayers.NATION_4_VILLAGER));
-//                        }
-                        newModel = new Nation4ButcherVillager(context.getPart(ModModelLayers.NATION_4_VILLAGER));
-
+                        if (villager.getVillagerData().getProfession().equals(VillagerProfession.BUTCHER)) {
+                            newModel = new Nation4ButcherVillager(context.getPart(ModModelLayers.NATION_4_VILLAGER));
+                        } else if (villager.getVillagerData().getProfession().equals(VillagerProfession.FISHERMAN)) {
+                            newModel = new Nation4FishermanVillager(context.getPart(ModModelLayers.NATION_4_VILLAGER));
+                        } else if (villager.getVillagerData().getProfession().equals(VillagerProfession.LIBRARIAN)) {
+                            newModel = new Nation4LibrarianVillager(context.getPart(ModModelLayers.NATION_4_VILLAGER));
+                        } else {
+                            newModel = new Nation4ButcherVillager(context.getPart(ModModelLayers.NATION_4_VILLAGER));
+                        }
                         this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
-                        System.out.println("changed villager to cat");
                         break;
                     case 5:
                         newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));

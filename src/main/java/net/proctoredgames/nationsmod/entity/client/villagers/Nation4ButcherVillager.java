@@ -1,15 +1,18 @@
 package net.proctoredgames.nationsmod.entity.client.villagers;
 
 import net.minecraft.client.model.*;
+import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.*;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.MerchantEntity;
+import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.util.math.MathHelper;
 
 // Made with Blockbench 4.12.2
 // Exported for Minecraft version 1.17+ for Yarn
 // Paste this class into your mod and generate all required imports
-public class Nation4ButcherVillager<T extends Entity> extends VillagerResemblingModel {
+public class Nation4ButcherVillager extends EntityModel<VillagerEntity> {
     private final ModelPart head;
     private final ModelPart headwear;
     private final ModelPart headwear2;
@@ -33,17 +36,14 @@ public class Nation4ButcherVillager<T extends Entity> extends VillagerResembling
     private final ModelPart bone3;
     private final ModelPart arms_sub_3;
     private final ModelPart bone2;
-
-    private final ModelPart root;
-    private final ModelPart hat;
-    private final ModelPart hatRim;
-    private final ModelPart rightLeg;
-    private final ModelPart leftLeg;
+    private final ModelPart right_leg;
+    private final ModelPart left_leg;
     public Nation4ButcherVillager(ModelPart root) {
-        super(root);
+        this.head = root.getChild("head");
         this.headwear = root.getChild("headwear");
         this.headwear2 = root.getChild("headwear2");
         this.rotation = this.headwear2.getChild("rotation");
+        this.nose = root.getChild("nose");
         this.body = root.getChild("body");
         this.bone = this.body.getChild("bone");
         this.bonee5 = this.bone.getChild("bonee5");
@@ -62,14 +62,8 @@ public class Nation4ButcherVillager<T extends Entity> extends VillagerResembling
         this.bone3 = this.arms_flipped.getChild("bone3");
         this.arms_sub_3 = this.bone3.getChild("arms_sub_3");
         this.bone2 = this.arms_rotation.getChild("bone2");
-
-        this.root = root;
-        this.head = root.getChild(EntityModelPartNames.HEAD);
-        this.hat = this.head.getChild(EntityModelPartNames.HAT);
-        this.hatRim = this.hat.getChild(EntityModelPartNames.HAT_RIM);
-        this.nose = this.head.getChild(EntityModelPartNames.NOSE);
-        this.rightLeg = root.getChild(EntityModelPartNames.RIGHT_LEG);
-        this.leftLeg = root.getChild(EntityModelPartNames.LEFT_LEG);
+        this.right_leg = root.getChild("right_leg");
+        this.left_leg = root.getChild("left_leg");
     }
     public static TexturedModelData getTexturedModelData() {
         ModelData modelData = new ModelData();
@@ -82,7 +76,7 @@ public class Nation4ButcherVillager<T extends Entity> extends VillagerResembling
 
         ModelPartData rotation = headwear2.addChild("rotation", ModelPartBuilder.create(), ModelTransform.of(0.0F, 0.0F, 0.0F, -1.5708F, 0.0F, 0.0F));
 
-        ModelPartData nose = modelPartData.addChild(EntityModelPartNames.NOSE, ModelPartBuilder.create(), ModelTransform.pivot(0.0F, -2.0F, 0.0F));
+        ModelPartData nose = modelPartData.addChild("nose", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, -2.0F, 0.0F));
 
         ModelPartData body = modelPartData.addChild("body", ModelPartBuilder.create().uv(27, 17).cuboid(-3.0F, 7.0F, -2.0F, 6.0F, 11.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
@@ -127,32 +121,27 @@ public class Nation4ButcherVillager<T extends Entity> extends VillagerResembling
 
         ModelPartData bone2 = arms_rotation.addChild("bone2", ModelPartBuilder.create().uv(33, 41).cuboid(-1.0F, 0.0F, -1.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-3.5F, 6.0F, 5.0F, 0.6981F, -0.3491F, 0.0F));
 
-        ModelPartData right_leg = modelPartData.addChild(EntityModelPartNames.RIGHT_LEG, ModelPartBuilder.create(), ModelTransform.pivot(-2.0F, 12.0F, 0.0F));
+        ModelPartData right_leg = modelPartData.addChild("right_leg", ModelPartBuilder.create(), ModelTransform.pivot(-2.0F, 12.0F, 0.0F));
 
-        ModelPartData left_leg = modelPartData.addChild(EntityModelPartNames.LEFT_LEG, ModelPartBuilder.create(), ModelTransform.pivot(2.0F, 12.0F, 0.0F));
-
-
-        ModelPartData modelPartData3 = head.addChild(
-                EntityModelPartNames.HAT, ModelPartBuilder.create().uv(32, 0).cuboid(-4.0F, -10.0F, -4.0F, 0.0F, 0.0F, 0.0F, new Dilation(0.51F)), ModelTransform.NONE
-        );
-        modelPartData3.addChild(
-                EntityModelPartNames.HAT_RIM,
-                ModelPartBuilder.create().uv(30, 47).cuboid(-8.0F, -8.0F, -6.0F, 0.0F, 0.0F, 0.0F),
-                ModelTransform.rotation((float) (-Math.PI / 2), 0.0F, 0.0F)
-        );
-        head.addChild(
-                EntityModelPartNames.NOSE, ModelPartBuilder.create().uv(24, 0).cuboid(-1.0F, -1.0F, -6.0F, 0.0F, 0.0F, 0.0F), ModelTransform.pivot(0.0F, -2.0F, 0.0F)
-        );
-
+        ModelPartData left_leg = modelPartData.addChild("left_leg", ModelPartBuilder.create(), ModelTransform.pivot(2.0F, 12.0F, 0.0F));
         return TexturedModelData.of(modelData, 64, 64);
     }
+
     @Override
-    public ModelPart getPart() {
-        return this.root;
+    public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
+        head.render(matrices, vertices, light, overlay);
+        headwear.render(matrices, vertices, light, overlay);
+        headwear2.render(matrices, vertices, light, overlay);
+        nose.render(matrices, vertices, light, overlay);
+        body.render(matrices, vertices, light, overlay);
+        bodywear.render(matrices, vertices, light, overlay);
+        arms.render(matrices, vertices, light, overlay);
+        right_leg.render(matrices, vertices, light, overlay);
+        left_leg.render(matrices, vertices, light, overlay);
     }
 
     @Override
-    public void setAngles(Entity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+    public void setAngles(VillagerEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
         boolean bl = false;
         if (entity instanceof MerchantEntity) {
             bl = ((MerchantEntity)entity).getHeadRollingTimeLeft() > 0;
@@ -167,21 +156,9 @@ public class Nation4ButcherVillager<T extends Entity> extends VillagerResembling
             this.head.roll = 0.0F;
         }
 
-        this.rightLeg.pitch = MathHelper.cos(limbAngle * 0.6662F) * 1.4F * limbDistance * 0.5F;
-        this.leftLeg.pitch = MathHelper.cos(limbAngle * 0.6662F + (float) Math.PI) * 1.4F * limbDistance * 0.5F;
-        this.rightLeg.yaw = 0.0F;
-        this.leftLeg.yaw = 0.0F;
-    }
-
-    @Override
-    public ModelPart getHead() {
-        return this.head;
-    }
-
-    @Override
-    public void setHatVisible(boolean visible) {
-        this.head.visible = visible;
-        this.hat.visible = visible;
-        this.hatRim.visible = visible;
+        this.right_leg.pitch = MathHelper.cos(limbAngle * 0.6662F) * 1.4F * limbDistance * 0.5F;
+        this.left_leg.pitch = MathHelper.cos(limbAngle * 0.6662F + (float) Math.PI) * 1.4F * limbDistance * 0.5F;
+        this.right_leg.yaw = 0.0F;
+        this.left_leg.yaw = 0.0F;
     }
 }

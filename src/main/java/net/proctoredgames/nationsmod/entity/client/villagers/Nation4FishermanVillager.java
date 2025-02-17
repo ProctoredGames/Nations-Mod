@@ -1,17 +1,20 @@
 package net.proctoredgames.nationsmod.entity.client.villagers;
 
 import net.minecraft.client.model.*;
+import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.*;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.MerchantEntity;
+import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.util.math.MathHelper;
 
 // Made with Blockbench 4.12.2
 // Exported for Minecraft version 1.17+ for Yarn
 // Paste this class into your mod and generate all required imports
-public class Nation4FishermanVillager<T extends Entity> extends VillagerResemblingModel {
+public class Nation4FishermanVillager extends EntityModel<VillagerEntity> {
     private final ModelPart head;
-//    private final ModelPart head2;
+    private final ModelPart head2;
     private final ModelPart villager;
     private final ModelPart mirror;
     private final ModelPart nose2;
@@ -30,23 +33,18 @@ public class Nation4FishermanVillager<T extends Entity> extends VillagerResembli
     private final ModelPart bodywear;
     private final ModelPart arms;
     private final ModelPart mirrored;
-
-    private final ModelPart root;
-    private final ModelPart hat;
-    private final ModelPart hatRim;
-    private final ModelPart rightLeg;
-    private final ModelPart leftLeg;
-
+    private final ModelPart right_leg;
+    private final ModelPart left_leg;
     public Nation4FishermanVillager(ModelPart root) {
-        super(root);
-        this.head = root.getChild(EntityModelPartNames.HEAD);
-//        this.head2 = head.getChild("head2");
-        this.villager = this.head.getChild("villager");
-        this.mirror = this.head.getChild("mirror");
-        this.nose2 = this.head.getChild("nose2");
-        this.left_horn = this.head.getChild("left_horn");
-        this.right_horn = this.head.getChild("right_horn");
-        this.necklol = this.head.getChild("necklol");
+        this.head = root.getChild("head");
+        this.head2 = this.head.getChild("head2");
+        this.villager = this.head2.getChild("villager");
+        this.mirror = this.head2.getChild("mirror");
+        this.nose2 = this.head2.getChild("nose2");
+        this.left_horn = this.head2.getChild("left_horn");
+        this.right_horn = this.head2.getChild("right_horn");
+        this.necklol = this.head2.getChild("necklol");
+        this.nose = root.getChild("nose");
         this.body3 = root.getChild("body3");
         this.body2 = this.body3.getChild("body2");
         this.body = this.body2.getChild("body");
@@ -58,34 +56,28 @@ public class Nation4FishermanVillager<T extends Entity> extends VillagerResembli
         this.bodywear = root.getChild("bodywear");
         this.arms = root.getChild("arms");
         this.mirrored = this.arms.getChild("mirrored");
-
-        this.root = root;
-        this.hat = this.head.getChild(EntityModelPartNames.HAT);
-        this.hatRim = this.hat.getChild(EntityModelPartNames.HAT_RIM);
-        this.nose = this.head.getChild(EntityModelPartNames.NOSE);
-        this.rightLeg = root.getChild(EntityModelPartNames.RIGHT_LEG);
-        this.leftLeg = root.getChild(EntityModelPartNames.LEFT_LEG);
+        this.right_leg = root.getChild("right_leg");
+        this.left_leg = root.getChild("left_leg");
     }
-
     public static TexturedModelData getTexturedModelData() {
         ModelData modelData = new ModelData();
         ModelPartData modelPartData = modelData.getRoot();
         ModelPartData head = modelPartData.addChild("head", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
-//        ModelPartData head2 = head.addChild("head2", ModelPartBuilder.create().uv(23, 52).cuboid(-0.5F, -7.0F, -8.0F, 0.0F, 7.0F, 5.0F, new Dilation(0.0F))
-//                .uv(2, 61).cuboid(-6.0F, -15.0F, -4.0F, 3.0F, 2.0F, 1.0F, new Dilation(0.0F)), ModelTransform.pivot(0.5F, 14.0F, 0.0F));
+        ModelPartData head2 = head.addChild("head2", ModelPartBuilder.create().uv(23, 52).cuboid(-0.5F, -7.0F, -8.0F, 0.0F, 7.0F, 5.0F, new Dilation(0.0F))
+                .uv(2, 61).cuboid(-6.0F, -15.0F, -4.0F, 3.0F, 2.0F, 1.0F, new Dilation(0.0F)), ModelTransform.pivot(0.5F, 14.0F, 0.0F));
 
-        ModelPartData villager = head.addChild("villager", ModelPartBuilder.create(), ModelTransform.pivot(-0.5F, -14.0F, 0.0F));
+        ModelPartData villager = head2.addChild("villager", ModelPartBuilder.create(), ModelTransform.pivot(-0.5F, -14.0F, 0.0F));
 
-        ModelPartData mirror = head.addChild("mirror", ModelPartBuilder.create().uv(2, 61).mirrored().cuboid(2.5F, -25.0F, -4.0F, 3.0F, 2.0F, 1.0F, new Dilation(0.0F)).mirrored(false), ModelTransform.pivot(-0.5F, 10.0F, 0.0F));
+        ModelPartData mirror = head2.addChild("mirror", ModelPartBuilder.create().uv(2, 61).mirrored().cuboid(2.5F, -25.0F, -4.0F, 3.0F, 2.0F, 1.0F, new Dilation(0.0F)).mirrored(false), ModelTransform.pivot(-0.5F, 10.0F, 0.0F));
 
-        ModelPartData nose2 = head.addChild("nose2", ModelPartBuilder.create().uv(34, 46).cuboid(-3.0F, -3.5208F, -0.8048F, 5.0F, 7.0F, 10.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, -8.0F, -8.0F, 0.6545F, 0.0F, 0.0F));
+        ModelPartData nose2 = head2.addChild("nose2", ModelPartBuilder.create().uv(34, 46).cuboid(-3.0F, -3.5208F, -0.8048F, 5.0F, 7.0F, 10.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, -8.0F, -8.0F, 0.6545F, 0.0F, 0.0F));
 
-        ModelPartData left_horn = head.addChild("left_horn", ModelPartBuilder.create().uv(12, 55).cuboid(-0.01F, -20.0F, -4.0F, 2.0F, 7.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
+        ModelPartData left_horn = head2.addChild("left_horn", ModelPartBuilder.create().uv(12, 55).cuboid(-0.01F, -20.0F, -4.0F, 2.0F, 7.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
-        ModelPartData right_horn = head.addChild("right_horn", ModelPartBuilder.create().uv(12, 55).cuboid(-2.99F, -20.0F, -4.0F, 2.0F, 7.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
+        ModelPartData right_horn = head2.addChild("right_horn", ModelPartBuilder.create().uv(12, 55).cuboid(-2.99F, -20.0F, -4.0F, 2.0F, 7.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
-        ModelPartData necklol = head.addChild("necklol", ModelPartBuilder.create().uv(8, 18).cuboid(-2.0F, -16.0F, -2.0F, 3.0F, 3.0F, 10.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 3.0F, -9.0F, -0.4363F, 0.0F, 0.0F));
+        ModelPartData necklol = head2.addChild("necklol", ModelPartBuilder.create().uv(8, 18).cuboid(-2.0F, -16.0F, -2.0F, 3.0F, 3.0F, 10.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 3.0F, -9.0F, -0.4363F, 0.0F, 0.0F));
 
         ModelPartData nose = modelPartData.addChild("nose", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, -2.0F, 0.0F));
 
@@ -112,22 +104,41 @@ public class Nation4FishermanVillager<T extends Entity> extends VillagerResembli
 
         ModelPartData mirrored = arms.addChild("mirrored", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 21.05F, 1.05F));
 
-        ModelPartData right_leg = modelPartData.addChild("rightLeg", ModelPartBuilder.create(), ModelTransform.pivot(-2.0F, 12.0F, 0.0F));
+        ModelPartData right_leg = modelPartData.addChild("right_leg", ModelPartBuilder.create(), ModelTransform.pivot(-2.0F, 12.0F, 0.0F));
 
-        ModelPartData left_leg = modelPartData.addChild("leftLeg", ModelPartBuilder.create(), ModelTransform.pivot(2.0F, 12.0F, 0.0F));
-
-        ModelPartData modelPartData3 = head.addChild(
-                EntityModelPartNames.HAT, ModelPartBuilder.create().uv(32, 0).cuboid(-4.0F, -10.0F, -4.0F, 0.0F, 0.0F, 0.0F, new Dilation(0.51F)), ModelTransform.NONE
-        );
-        modelPartData3.addChild(
-                EntityModelPartNames.HAT_RIM,
-                ModelPartBuilder.create().uv(30, 47).cuboid(-8.0F, -8.0F, -6.0F, 0.0F, 0.0F, 0.0F),
-                ModelTransform.rotation((float) (-Math.PI / 2), 0.0F, 0.0F)
-        );
-        head.addChild(
-                EntityModelPartNames.NOSE, ModelPartBuilder.create().uv(24, 0).cuboid(-1.0F, -1.0F, -6.0F, 0.0F, 0.0F, 0.0F), ModelTransform.pivot(0.0F, -2.0F, 0.0F)
-        );
-
+        ModelPartData left_leg = modelPartData.addChild("left_leg", ModelPartBuilder.create(), ModelTransform.pivot(2.0F, 12.0F, 0.0F));
         return TexturedModelData.of(modelData, 128, 128);
+    }
+    @Override
+    public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
+        head.render(matrices, vertices, light, overlay);
+        nose.render(matrices, vertices, light, overlay);
+        body3.render(matrices, vertices, light, overlay);
+        bodywear.render(matrices, vertices, light, overlay);
+        arms.render(matrices, vertices, light, overlay);
+        right_leg.render(matrices, vertices, light, overlay);
+        left_leg.render(matrices, vertices, light, overlay);
+    }
+
+    @Override
+    public void setAngles(VillagerEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+        boolean bl = false;
+        if (entity instanceof MerchantEntity) {
+            bl = ((MerchantEntity)entity).getHeadRollingTimeLeft() > 0;
+        }
+
+        this.head.yaw = headYaw * (float) (Math.PI / 180.0);
+        this.head.pitch = headPitch * (float) (Math.PI / 180.0);
+        if (bl) {
+            this.head.roll = 0.3F * MathHelper.sin(0.45F * animationProgress);
+            this.head.pitch = 0.4F;
+        } else {
+            this.head.roll = 0.0F;
+        }
+
+        this.right_leg.pitch = MathHelper.cos(limbAngle * 0.6662F) * 1.4F * limbDistance * 0.5F;
+        this.left_leg.pitch = MathHelper.cos(limbAngle * 0.6662F + (float) Math.PI) * 1.4F * limbDistance * 0.5F;
+        this.right_leg.yaw = 0.0F;
+        this.left_leg.yaw = 0.0F;
     }
 }
