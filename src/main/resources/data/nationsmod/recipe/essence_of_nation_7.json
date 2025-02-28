@@ -3,10 +3,10 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "minecraft:leather"
+      "item": "minecraft:glass"
     },
     "-": {
-      "item": "minecraft:string"
+      "item": "minecraft:oak_planks"
     },
     "*": {
       "item": "minecraft:blue_wool"

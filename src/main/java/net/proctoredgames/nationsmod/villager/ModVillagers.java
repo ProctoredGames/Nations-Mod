@@ -26,6 +26,7 @@ public class ModVillagers {
     public static final VillagerType NATION_6 = registerType("nation_6");
     public static final VillagerType NATION_7 = registerType("nation_7");
     public static final VillagerType NATION_8 = registerType("nation_8");
+    public static final VillagerType NATION_9 = registerType("nation_9");
 
 
     private static VillagerType registerType(String name) {

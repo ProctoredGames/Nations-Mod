@@ -23,15 +23,25 @@ public class ModItemGroups {
                         entries.add(ModItems.ESSENCE_OF_NATION_6);
                         entries.add(ModItems.ESSENCE_OF_NATION_7);
                         entries.add(ModItems.ESSENCE_OF_NATION_8);
+                        entries.add(ModItems.ESSENCE_OF_NATION_9);
 
                         entries.add(ModItems.NATION_1_ELYTRA);
                         entries.add(ModItems.NATION_2_ELYTRA);
+                        entries.add(ModItems.NATION_2_DEMON_ELYTRA);
                         entries.add(ModItems.NATION_3_ELYTRA);
-                        entries.add(ModItems.NATION_4_ELYTRA);
-                        entries.add(ModItems.NATION_5_ELYTRA);
-                        entries.add(ModItems.NATION_6_ELYTRA);
-                        entries.add(ModItems.NATION_7_ELYTRA);
-                        entries.add(ModItems.NATION_8_ELYTRA);
+//                        entries.add(ModItems.NATION_4_ELYTRA);
+//                        entries.add(ModItems.NATION_5_ELYTRA);
+//                        entries.add(ModItems.NATION_6_ELYTRA);
+//                        entries.add(ModItems.NATION_7_ELYTRA);
+//                        entries.add(ModItems.NATION_8_ELYTRA);
+                        entries.add(ModItems.NATION_9_ELYTRA);
+
+                        entries.add(ModItems.NATION_3_NETHERITE_SWORD);
+                        entries.add(ModItems.NATION_9_NETHERITE_AXE);
+                        entries.add(ModItems.NATION_9_NETHERITE_PICKAXE);
+                        entries.add(ModItems.NATION_9_NETHERITE_SWORD);
+
+                        entries.add(ModItems.NATION_9_HAT);
 
                     }).build());
 

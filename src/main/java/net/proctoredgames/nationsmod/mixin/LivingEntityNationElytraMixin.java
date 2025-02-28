@@ -34,6 +34,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 import net.proctoredgames.nationsmod.item.ModItems;
+import net.proctoredgames.nationsmod.item.custom.NationElytraItem;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.spongepowered.asm.mixin.Mixin;
@@ -64,17 +65,17 @@ public abstract class LivingEntityNationElytraMixin extends Entity implements At
     @Inject(method = "tickFallFlying", at = @At("HEAD"), cancellable = true)
     private void customTickFallFlying(CallbackInfo ci) {
         boolean bl = this.getFlag(Entity.FALL_FLYING_FLAG_INDEX);
-
         if (bl && !this.isOnGround() && !this.hasVehicle() && !this.hasStatusEffect(StatusEffects.LEVITATION)) {
             ItemStack itemStack = this.getEquippedStack(EquipmentSlot.CHEST);
-            if (itemStack.getItem() instanceof ElytraItem && ElytraItem.isUsable(itemStack)) {
+            if ((itemStack.getItem() instanceof NationElytraItem && NationElytraItem.isUsable(itemStack))
+            || (itemStack.getItem() instanceof ElytraItem && ElytraItem.isUsable(itemStack))) {
                 bl = true;
                 this.fallFlyingTicks++;
-                int i = this.fallFlyingTicks;
+                int i = this.fallFlyingTicks + 1;
                 if (!this.getWorld().isClient && i % 10 == 0) {
                     int j = i / 10;
                     if (j % 2 == 0) {
-                        itemStack.damage(1, (LivingEntity)(Object)this, EquipmentSlot.CHEST);
+                        itemStack.damage(1, (LivingEntity)(Object) this, EquipmentSlot.CHEST);
                     }
 
                     this.emitGameEvent(GameEvent.ELYTRA_GLIDE);

@@ -44,72 +44,74 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
         if(villager instanceof NationBased && context != null){
             int textureId = ((NationBased) villager).getNation();
 
-            if(lastTextureId != textureId){
-                lastTextureId = textureId;
-                EntityModel<VillagerEntity> oldModel = super.model;
-                EntityModel<VillagerEntity> newModel;
-                this.features.clear();
-                switch(textureId){
-                    case 1:
-                        newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
-                        this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
-                        break;
-                    case 2:
-                        newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
-                        this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
-                        break;
-                    case 3:
-                        newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
-                        this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
-                        break;
-                    case 4:
-                        if (villager.getVillagerData().getProfession().equals(VillagerProfession.BUTCHER)) {
-                            newModel = new Nation4ButcherVillager(context.getPart(ModModelLayers.NATION_4_VILLAGER));
-                        } else if (villager.getVillagerData().getProfession().equals(VillagerProfession.FISHERMAN)) {
-                            newModel = new Nation4FishermanVillager(context.getPart(ModModelLayers.NATION_4_VILLAGER));
-                        } else if (villager.getVillagerData().getProfession().equals(VillagerProfession.LIBRARIAN)) {
-                            newModel = new Nation4LibrarianVillager(context.getPart(ModModelLayers.NATION_4_VILLAGER));
-                        } else {
-                            newModel = new Nation4ButcherVillager(context.getPart(ModModelLayers.NATION_4_VILLAGER));
-                        }
-                        this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
-                        break;
-                    case 5:
-                        newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
-                        this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
-                        break;
-                    case 6:
-                        newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
-                        this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
-                        break;
-                    case 7:
-                        newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
-                        this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
-                        break;
-                    case 8:
-                        newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
-                        this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
-                        break;
-                    default:
-                        newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
-                        this.addFeature(new HeadFeatureRenderer<>((FeatureRendererContext)this, context.getModelLoader(), context.getHeldItemRenderer()));
-                        this.addFeature(new VillagerClothingFeatureRenderer<>((FeatureRendererContext)this, context.getResourceManager(), "villager"));
-                        this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
-                        break;
-                }
-                oldModel.copyStateTo(newModel);  // or newModel.copyStateFrom(oldModel)
-                super.model = newModel;
+            EntityModel<VillagerEntity> oldModel = super.model;
+            EntityModel<VillagerEntity> newModel;
+            this.features.clear();
+            switch(textureId){
+                case 1:
+                    newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
+                    this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
+                    break;
+                case 2:
+                    newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
+                    this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
+                    break;
+                case 3:
+                    newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
+                    this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
+                    break;
+                case 4:
+                    if (villager.getVillagerData().getProfession() == VillagerProfession.BUTCHER) {
+                        newModel = new Nation4ButcherVillager(context.getPart(ModModelLayers.NATION_4_BUTCHER));
+                    } else if (villager.getVillagerData().getProfession() == VillagerProfession.FISHERMAN) {
+                        newModel = new Nation4FishermanVillager(context.getPart(ModModelLayers.NATION_4_FISHERMAN));
+                    } else if (villager.getVillagerData().getProfession() == VillagerProfession.LIBRARIAN) {
+                        newModel = new Nation4LibrarianVillager(context.getPart(ModModelLayers.NATION_4_LIBRARIAN));
+                    } else {
+                        newModel = new Nation4ButcherVillager(context.getPart(ModModelLayers.NATION_4_BUTCHER));
+                    }
+                    this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
+                    break;
+                case 5:
+                    newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
+                    this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
+                    break;
+                case 6:
+                    newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
+                    this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
+                    break;
+                case 7:
+                    newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
+                    this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
+                    break;
+                case 8:
+                    newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
+                    this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
+                    break;
+                case 9:
+                    newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
+                    this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
+                    break;
+                default:
+                    newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
+                    this.addFeature(new HeadFeatureRenderer<>((FeatureRendererContext)this, context.getModelLoader(), context.getHeldItemRenderer()));
+                    this.addFeature(new VillagerClothingFeatureRenderer<>((FeatureRendererContext)this, context.getResourceManager(), "villager"));
+                    this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
+                    break;
             }
+            oldModel.copyStateTo(newModel);  // or newModel.copyStateFrom(oldModel)
+            super.model = newModel;
 
             Identifier texture = switch (textureId) {
                 case 1 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/nation/nation_1.png");
-                case 2 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/nation/nation_4_fisherman.png");
+                case 2 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/nation/nation_2.png");
                 case 3 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/nation/nation_3.png");
                 case 4 -> getNation4VillagerTexture(villager.getVillagerData().getProfession());
                 case 5 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/nation/nation_5.png");
                 case 6 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/nation/nation_6.png");
                 case 7 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/nation/nation_7.png");
                 case 8 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/nation/nation_8.png");
+                case 9 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/nation/nation_9.png");
                 default -> Identifier.ofVanilla("textures/entity/villager/villager.png");
             };
 

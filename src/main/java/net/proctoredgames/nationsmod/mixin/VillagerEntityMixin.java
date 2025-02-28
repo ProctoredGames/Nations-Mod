@@ -36,28 +36,28 @@ public abstract class VillagerEntityMixin extends PassiveEntity implements Natio
     private void changeVillagerNation(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
         ItemStack stack = player.getStackInHand(hand);
 
-        if (stack.getItem() instanceof NationEssenceItem) {
+        if (stack.getItem() instanceof NationEssenceItem && ((NationEssenceItem) stack.getItem()).getNation() == 4) {
 
-            System.out.println(((NationEssenceItem) stack.getItem()).getNation());
+//            System.out.println(((NationEssenceItem) stack.getItem()).getNation());
             VillagerEntity villager = (VillagerEntity) (Object) this;
 
             VillagerData oldData = villager.getVillagerData();
-            Biome biome = this.getWorld().getBiome(this.getBlockPos()).value(); // Get the current biome
 
-            VillagerType newType = switch (((NationEssenceItem) stack.getItem()).getNation()) {
-                case 1 -> ModVillagers.NATION_1;
-                case 2 -> ModVillagers.NATION_2;
-                case 3 -> ModVillagers.NATION_3;
-                case 4 -> ModVillagers.NATION_4;
-                case 5 -> ModVillagers.NATION_5;
-                case 6 -> ModVillagers.NATION_6;
-                case 7 -> ModVillagers.NATION_7;
-                case 8 -> ModVillagers.NATION_8;
-                default -> VillagerType.JUNGLE;
-            };
+//            VillagerType newType = switch (((NationEssenceItem) stack.getItem()).getNation()) {
+//                case 1 -> ModVillagers.NATION_1;
+//                case 2 -> ModVillagers.NATION_2;
+//                case 3 -> ModVillagers.NATION_3;
+//                case 4 -> ModVillagers.NATION_4;
+//                case 5 -> ModVillagers.NATION_5;
+//                case 6 -> ModVillagers.NATION_6;
+//                case 7 -> ModVillagers.NATION_7;
+//                case 8 -> ModVillagers.NATION_8;
+//                case 9 -> ModVillagers.NATION_9;
+//                default -> VillagerType.JUNGLE;
+//            };
             // Set new VillagerData but keep profession and level the same
             villager.setVillagerData(new VillagerData(
-                    newType,        // New biome type (controls skin)
+                    ModVillagers.NATION_4,        // New biome type (controls skin)
                     oldData.getProfession(), // Keep current profession
                     oldData.getLevel() // Keep current level
             ));
@@ -95,6 +95,8 @@ public abstract class VillagerEntityMixin extends PassiveEntity implements Natio
             nation = 7;
         } else if(type == ModVillagers.NATION_8){
             nation = 8;
+        } else if(type == ModVillagers.NATION_9){
+            nation = 9;
         }
         return nation;
     }
