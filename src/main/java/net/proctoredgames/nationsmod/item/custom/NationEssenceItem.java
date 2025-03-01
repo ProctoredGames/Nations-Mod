@@ -9,7 +9,6 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.proctoredgames.nationsmod.NationBased;
-import net.proctoredgames.nationsmod.mixin.VillagerEntityMixin;
 
 public class NationEssenceItem extends Item implements NationBased {
     public int nation;
