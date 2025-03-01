@@ -112,6 +112,7 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
                 case 7 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/nation/nation_7.png");
                 case 8 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/nation/nation_8.png");
                 case 9 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/nation/nation_9.png");
+                case 10 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/nation/nation_10.png");
                 default -> Identifier.ofVanilla("textures/entity/villager/villager.png");
             };
 

@@ -97,6 +97,8 @@ public abstract class VillagerEntityMixin extends PassiveEntity implements Natio
             nation = 8;
         } else if(type == ModVillagers.NATION_9){
             nation = 9;
+        } else if(type == ModVillagers.NATION_10){
+            nation = 10;
         }
         return nation;
     }

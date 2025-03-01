@@ -24,6 +24,7 @@ public class ModItemGroups {
                         entries.add(ModItems.ESSENCE_OF_NATION_7);
                         entries.add(ModItems.ESSENCE_OF_NATION_8);
                         entries.add(ModItems.ESSENCE_OF_NATION_9);
+                        entries.add(ModItems.ESSENCE_OF_NATION_10);
 
                         entries.add(ModItems.NATION_1_ELYTRA);
                         entries.add(ModItems.NATION_2_ELYTRA);
@@ -32,9 +33,10 @@ public class ModItemGroups {
 //                        entries.add(ModItems.NATION_4_ELYTRA);
                         entries.add(ModItems.NATION_5_ELYTRA);
                         entries.add(ModItems.NATION_6_ELYTRA);
-//                        entries.add(ModItems.NATION_7_ELYTRA);
+                        entries.add(ModItems.NATION_7_ELYTRA);
                         entries.add(ModItems.NATION_8_ELYTRA);
                         entries.add(ModItems.NATION_9_ELYTRA);
+                        entries.add(ModItems.NATION_10_ELYTRA);
 
                         entries.add(ModItems.NATION_3_NETHERITE_SWORD);
                         entries.add(ModItems.NATION_9_NETHERITE_AXE);
@@ -58,9 +60,22 @@ public class ModItemGroups {
                         entries.add(ModItems.NATION_5_NETHERITE_LEGGINGS);
                         entries.add(ModItems.NATION_5_NETHERITE_BOOTS);
 
-                        entries.add(ModItems.NATION_2_BOW);
+                        entries.add(ModItems.INVISIBLE_DIAMOND_HELMET);
+                        entries.add(ModItems.INVISIBLE_DIAMOND_CHESTPLATE);
+                        entries.add(ModItems.INVISIBLE_DIAMOND_LEGGINGS);
+                        entries.add(ModItems.INVISIBLE_DIAMOND_BOOTS);
 
+                        entries.add(ModItems.INVISIBLE_NETHERITE_HELMET);
+                        entries.add(ModItems.INVISIBLE_NETHERITE_CHESTPLATE);
+                        entries.add(ModItems.INVISIBLE_NETHERITE_LEGGINGS);
+                        entries.add(ModItems.INVISIBLE_NETHERITE_BOOTS);
+
+                        entries.add(ModItems.NATION_2_BOW);
+                        entries.add(ModItems.NATION_9_BOW);
+
+                        entries.add(ModItems.NATION_4_HAT);
                         entries.add(ModItems.NATION_6_HAT);
+                        entries.add(ModItems.NATION_8_HAT);
                         entries.add(ModItems.NATION_9_HAT);
 
                     }).build());

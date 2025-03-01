@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:netherite_boots"
+    },
+    {
+      "item": "nationsmod:essence_of_nation_5"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "nationsmod:nation_5_netherite_boots"
+  }
+}
