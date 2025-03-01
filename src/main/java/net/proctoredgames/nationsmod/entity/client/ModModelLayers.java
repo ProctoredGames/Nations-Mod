@@ -21,6 +21,8 @@ public class ModModelLayers {
     public static final EntityModelLayer NATION_6_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_6_villager"), "main");
     public static final EntityModelLayer NATION_7_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_7_villager"), "main");
     public static final EntityModelLayer NATION_8_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_8_villager"), "main");
+    public static final EntityModelLayer NATION_9_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_9_villager"), "main");
+    public static final EntityModelLayer NATION_10_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_10_villager"), "main");
 
     public static void registerModels() {
 //        EntityModelLayerRegistry.registerModelLayer(NATION_1_VILLAGER, MalbiNationsCatVillagerModel::getTexturedModelData);
