@@ -26,12 +26,15 @@ public class ModItems {
     public static final Item NATION_2_DEMON_ELYTRA = registerItem("nation_2_demon_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), -2));
     public static final Item NATION_3_ELYTRA = registerItem("nation_3_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 3));
 //    public static final Item NATION_4_ELYTRA = registerItem("nation_4_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 4));
-//    public static final Item NATION_5_ELYTRA = registerItem("nation_5_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 5));
-//    public static final Item NATION_6_ELYTRA = registerItem("nation_6_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 6));
+    public static final Item NATION_5_ELYTRA = registerItem("nation_5_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 5));
+    public static final Item NATION_6_ELYTRA = registerItem("nation_6_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 6));
 //    public static final Item NATION_7_ELYTRA = registerItem("nation_7_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 7));
-//    public static final Item NATION_8_ELYTRA = registerItem("nation_8_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 8));
+    public static final Item NATION_8_ELYTRA = registerItem("nation_8_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 8));
     public static final Item NATION_9_ELYTRA = registerItem("nation_9_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 9));
 
+
+
+    public static final Item NATION_6_HAT = registerItem("nation_6_hat", new HatItem(new Item.Settings()));
     public static final Item NATION_9_HAT = registerItem("nation_9_hat", new HatItem(new Item.Settings()));
 
     public static final Item NATION_3_NETHERITE_SWORD = registerItem(
@@ -59,6 +62,76 @@ public class ModItems {
                     ToolMaterials.NETHERITE, new Item.Settings().fireproof().attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.NETHERITE, 3, -2.4F))
             )
     );
+
+    public static final Item NATION_2_NETHERITE_HELMET = registerItem(
+            "nation_2_netherite_helmet",
+            new ArmorItem(ModArmorMaterials.NATION_2_NETHERITE, ArmorItem.Type.HELMET, new Item.Settings().fireproof().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(37)))
+    );
+    public static final Item NATION_2_NETHERITE_CHESTPLATE = registerItem(
+            "nation_2_netherite_chestplate",
+            new ArmorItem(ModArmorMaterials.NATION_2_NETHERITE, ArmorItem.Type.CHESTPLATE, new Item.Settings().fireproof().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(37)))
+    );
+    public static final Item NATION_2_NETHERITE_LEGGINGS = registerItem(
+            "nation_2_netherite_leggings",
+            new ArmorItem(ModArmorMaterials.NATION_2_NETHERITE, ArmorItem.Type.LEGGINGS, new Item.Settings().fireproof().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(37)))
+    );
+    public static final Item NATION_2_NETHERITE_BOOTS = registerItem(
+            "nation_2_netherite_boots",
+            new ArmorItem(ModArmorMaterials.NATION_2_NETHERITE, ArmorItem.Type.BOOTS, new Item.Settings().fireproof().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(37)))
+    );
+
+    public static final Item NATION_3_NETHERITE_HELMET = registerItem(
+            "nation_3_netherite_helmet",
+            new ArmorItem(ModArmorMaterials.NATION_3_NETHERITE, ArmorItem.Type.HELMET, new Item.Settings().fireproof().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(37)))
+    );
+    public static final Item NATION_3_NETHERITE_CHESTPLATE = registerItem(
+            "nation_3_netherite_chestplate",
+            new ArmorItem(ModArmorMaterials.NATION_3_NETHERITE, ArmorItem.Type.CHESTPLATE, new Item.Settings().fireproof().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(37)))
+    );
+    public static final Item NATION_3_NETHERITE_LEGGINGS = registerItem(
+            "nation_3_netherite_leggings",
+            new ArmorItem(ModArmorMaterials.NATION_3_NETHERITE, ArmorItem.Type.LEGGINGS, new Item.Settings().fireproof().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(37)))
+    );
+    public static final Item NATION_3_NETHERITE_BOOTS = registerItem(
+            "nation_3_netherite_boots",
+            new ArmorItem(ModArmorMaterials.NATION_3_NETHERITE, ArmorItem.Type.BOOTS, new Item.Settings().fireproof().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(37)))
+    );
+
+    public static final Item NATION_4_NETHERITE_HELMET = registerItem(
+            "nation_4_netherite_helmet",
+            new ArmorItem(ModArmorMaterials.NATION_4_NETHERITE, ArmorItem.Type.HELMET, new Item.Settings().fireproof().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(37)))
+    );
+    public static final Item NATION_4_NETHERITE_CHESTPLATE = registerItem(
+            "nation_4_netherite_chestplate",
+            new ArmorItem(ModArmorMaterials.NATION_4_NETHERITE, ArmorItem.Type.CHESTPLATE, new Item.Settings().fireproof().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(37)))
+    );
+    public static final Item NATION_4_NETHERITE_LEGGINGS = registerItem(
+            "nation_4_netherite_leggings",
+            new ArmorItem(ModArmorMaterials.NATION_4_NETHERITE, ArmorItem.Type.LEGGINGS, new Item.Settings().fireproof().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(37)))
+    );
+    public static final Item NATION_4_NETHERITE_BOOTS = registerItem(
+            "nation_4_netherite_boots",
+            new ArmorItem(ModArmorMaterials.NATION_4_NETHERITE, ArmorItem.Type.BOOTS, new Item.Settings().fireproof().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(37)))
+    );
+
+    public static final Item NATION_5_NETHERITE_HELMET = registerItem(
+            "nation_5_netherite_helmet",
+            new ArmorItem(ModArmorMaterials.NATION_5_NETHERITE, ArmorItem.Type.HELMET, new Item.Settings().fireproof().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(37)))
+    );
+    public static final Item NATION_5_NETHERITE_CHESTPLATE = registerItem(
+            "nation_5_netherite_chestplate",
+            new ArmorItem(ModArmorMaterials.NATION_5_NETHERITE, ArmorItem.Type.CHESTPLATE, new Item.Settings().fireproof().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(37)))
+    );
+    public static final Item NATION_5_NETHERITE_LEGGINGS = registerItem(
+            "nation_5_netherite_leggings",
+            new ArmorItem(ModArmorMaterials.NATION_5_NETHERITE, ArmorItem.Type.LEGGINGS, new Item.Settings().fireproof().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(37)))
+    );
+    public static final Item NATION_5_NETHERITE_BOOTS = registerItem(
+            "nation_5_netherite_boots",
+            new ArmorItem(ModArmorMaterials.NATION_5_NETHERITE, ArmorItem.Type.BOOTS, new Item.Settings().fireproof().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(37)))
+    );
+
+    public static final Item NATION_2_BOW = registerItem("nation_2_bow", new BowItem(new Item.Settings().maxDamage(384)));
 
 
     private static Item registerItem(String name, Item item){

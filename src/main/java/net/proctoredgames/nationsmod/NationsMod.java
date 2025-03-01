@@ -11,6 +11,7 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TextColor;
 import net.proctoredgames.nationsmod.item.ModItemGroups;
 import net.proctoredgames.nationsmod.item.ModItems;
+import net.proctoredgames.nationsmod.util.ModModelPredicates;
 import net.proctoredgames.nationsmod.villager.ModVillagers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +27,7 @@ public class NationsMod implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModVillagers.registerVillagers();
 		ModItems.registerModItems();
+		ModModelPredicates.registerModelPredicates();
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			dispatcher.register(CommandManager.literal("x_write_mod_developer_info")

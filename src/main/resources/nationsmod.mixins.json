@@ -8,7 +8,8 @@
 		"ElytraFeatureRendererMixin",
 		"NationElytraEnchantmentMixin",
 		"PlayerEntityNationElytraMixin",
-		"LivingEntityNationElytraMixin"
+		"LivingEntityNationElytraMixin",
+		"AbstractClientPlayerEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
