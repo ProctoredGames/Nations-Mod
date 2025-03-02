@@ -1,0 +1,18 @@
+// 1.21.1	2025-03-01T15:58:25.291186	Nations Mod/Tags for minecraft:item
+2d851620c461c0831b14730226961a51e77d8c63 data\minecraft\tags\item\enchantable\bow.json
+d45ac823dec67d5bf348f693f1fca99d5d39a18e data\minecraft\tags\item\swords.json
+4c62165ff7b2b64fc97addc10a37041c265c0440 data\minecraft\tags\item\shovels.json
+34d71f9eaf10e28fe0a77713818a1319d2eda5f6 data\minecraft\tags\item\head_armor.json
+686620fddfb8dade7f5b5e22acbdabcc1c2834dc data\minecraft\tags\item\trimmable_armor.json
+7766d5d19847349ef3dce4e2a11a9a595183aeaf data\minecraft\tags\item\leg_armor.json
+a83ce608071b5fe18ea5490a47021d12ae0c3ced data\minecraft\tags\item\hoes.json
+2051eb239b0979f1cc12147215cf992c9676db9b data\minecraft\tags\item\axes.json
+5dc9407fd7442f8446ca9b2c16f94a78d0530b30 data\minecraft\tags\item\pickaxes.json
+8fe5132951fa853a569d824174034b16fe53fc2d data\minecraft\tags\item\enchantable\chest_armor.json
+686620fddfb8dade7f5b5e22acbdabcc1c2834dc data\minecraft\tags\item\enchantable\armor.json
+8fe5132951fa853a569d824174034b16fe53fc2d data\minecraft\tags\item\chest_armor.json
+7766d5d19847349ef3dce4e2a11a9a595183aeaf data\minecraft\tags\item\enchantable\leg_armor.json
+34d71f9eaf10e28fe0a77713818a1319d2eda5f6 data\minecraft\tags\item\enchantable\head_armor.json
+1da73a4bb21f934f4e77d61318867d7181a31f09 data\minecraft\tags\item\enchantable\trident.json
+6c5f37776c1f807c15521be578367a6d9e49aa45 data\minecraft\tags\item\enchantable\foot_armor.json
+6c5f37776c1f807c15521be578367a6d9e49aa45 data\minecraft\tags\item\foot_armor.json
