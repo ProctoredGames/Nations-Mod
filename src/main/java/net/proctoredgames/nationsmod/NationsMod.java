@@ -32,7 +32,7 @@ public class NationsMod implements ModInitializer {
 		ModEntities.registerModEntities();
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
-			dispatcher.register(CommandManager.literal("x_write_mod_developer_info")
+			dispatcher.register(CommandManager.literal("x_write_mod_author_info")
 					.executes(context -> {
 						if (context.getSource().getPlayer() != null) {
 							context.getSource().getPlayer().sendMessage(

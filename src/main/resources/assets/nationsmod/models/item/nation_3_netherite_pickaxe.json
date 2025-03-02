@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "nationsmod:item/nation_3_netherite_pickaxe"
+  }
+}

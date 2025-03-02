@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "nationsmod:item/nation_3_iron_leggings",
-    "layer1": "minecraft:trims/items/leggings_trim_netherite"
-  }
-}

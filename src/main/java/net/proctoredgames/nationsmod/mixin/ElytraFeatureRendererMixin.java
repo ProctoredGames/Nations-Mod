@@ -93,15 +93,13 @@ public abstract class ElytraFeatureRendererMixin <T extends LivingEntity, M exte
         Identifier texture = switch (nation) {
             case 1 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_1_elytra.png");
             case 2 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_2_elytra.png");
-            case -2 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_2_demon_elytra.png");
-            case 3 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_3_elytra.png");
-            case 4 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_4_elytra.png");
-            case 5 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_5_elytra.png");
-            case 6 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_6_elytra.png");
-            case 7 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_7_elytra.png");
-            case 8 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_8_elytra.png");
-            case 9 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_9_elytra.png");
-            case 10 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_10_elytra.png");
+            case 3 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_2_elytra.png");
+            case 4 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_3_elytra.png");
+            case 5 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_3_elytra.png");
+            case 6 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_3_elytra.png");
+            case 7 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_5_elytra.png");
+            case 8 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_6_elytra.png");
+            case 9 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_7_elytra.png");
             default -> Identifier.ofVanilla("textures/entity/elytra.png");
         };
         return texture;

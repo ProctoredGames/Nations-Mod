@@ -31,25 +31,21 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_2_NETHERITE_CHESTPLATE));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_2_NETHERITE_LEGGINGS));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_2_NETHERITE_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_2_IRON_BOOTS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_2_IRON_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_2_IRON_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_2_IRON_HELMET));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_3_NETHERITE_BOOTS));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_3_NETHERITE_CHESTPLATE));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_3_NETHERITE_LEGGINGS));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_3_NETHERITE_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_3_IRON_BOOTS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_3_IRON_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_3_IRON_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_3_IRON_HELMET));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_4_NETHERITE_BOOTS));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_4_NETHERITE_CHESTPLATE));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_4_NETHERITE_LEGGINGS));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_4_NETHERITE_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_5_NETHERITE_BOOTS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_5_NETHERITE_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_5_NETHERITE_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_5_NETHERITE_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_10_NETHERITE_BOOTS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_10_NETHERITE_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_10_NETHERITE_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_10_NETHERITE_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_9_NETHERITE_BOOTS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_9_NETHERITE_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_9_NETHERITE_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NATION_9_NETHERITE_HELMET));
     }
 }

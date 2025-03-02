@@ -1,6 +1,0 @@
-{
-  "parent": "nationsmod:item/nation_10_bow",
-  "textures": {
-    "layer0": "nationsmod:item/nation_10_bow_pulling_0"
-  }
-}
