@@ -56,6 +56,8 @@ public class ModItemGroups {
                         entries.add(ModItems.NATION_10_NETHERITE_AXE);
                         entries.add(ModItems.NATION_10_NETHERITE_SWORD);
 
+                        entries.add(ModItems.NATION_2_TRIDENT);
+
                         entries.add(ModItems.NATION_2_NETHERITE_HELMET);
                         entries.add(ModItems.NATION_2_NETHERITE_CHESTPLATE);
                         entries.add(ModItems.NATION_2_NETHERITE_LEGGINGS);

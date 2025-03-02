@@ -17,6 +17,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
 
+        getOrCreateTagBuilder(ItemTags.TRIDENT_ENCHANTABLE)
+                .add(ModItems.NATION_2_TRIDENT);
+
         getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE)
                 .add(ModItems.NATION_2_BOW)
                 .add(ModItems.NATION_9_BOW)

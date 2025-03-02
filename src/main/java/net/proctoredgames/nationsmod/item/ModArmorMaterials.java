@@ -91,6 +91,16 @@ public class ModArmorMaterials {
             }), 9, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, () -> Ingredient.ofItems(ModItems.ESSENCE_OF_NATION_3),
                     List.of(new ArmorMaterial.Layer(Identifier.of(NationsMod.MOD_ID, "nation_3_iron"))), 0.0F,0.0F));
 
+    public static final RegistryEntry<ArmorMaterial> NATION_2_TURTLE = registerArmorMaterial("nation_2_turtle",
+            () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+                map.put(ArmorItem.Type.BOOTS, 2);
+                map.put(ArmorItem.Type.LEGGINGS, 5);
+                map.put(ArmorItem.Type.CHESTPLATE, 6);
+                map.put(ArmorItem.Type.HELMET, 2);
+                map.put(ArmorItem.Type.BODY, 5);
+            }), 9, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, () -> Ingredient.ofItems(ModItems.ESSENCE_OF_NATION_2),
+                    List.of(new ArmorMaterial.Layer(Identifier.of(NationsMod.MOD_ID, "nation_2_turtle"))), 0.0F,0.0F));
+
 
     public static RegistryEntry<ArmorMaterial> registerArmorMaterial(String name, Supplier<ArmorMaterial> material) {
         return Registry.registerReference(Registries.ARMOR_MATERIAL, Identifier.of(NationsMod.MOD_ID, name), material.get());

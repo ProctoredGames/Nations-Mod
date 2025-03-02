@@ -9,6 +9,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.text.TextColor;
+import net.proctoredgames.nationsmod.entity.ModEntities;
 import net.proctoredgames.nationsmod.item.ModItemGroups;
 import net.proctoredgames.nationsmod.item.ModItems;
 import net.proctoredgames.nationsmod.util.ModModelPredicates;
@@ -28,6 +29,7 @@ public class NationsMod implements ModInitializer {
 		ModVillagers.registerVillagers();
 		ModItems.registerModItems();
 		ModModelPredicates.registerModelPredicates();
+		ModEntities.registerModEntities();
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			dispatcher.register(CommandManager.literal("x_write_mod_developer_info")

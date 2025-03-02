@@ -24,6 +24,9 @@ public class ModModelLayers {
     public static final EntityModelLayer NATION_9_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_9_villager"), "main");
     public static final EntityModelLayer NATION_10_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_10_villager"), "main");
 
+    public static final EntityModelLayer NATION_2_TRIDENT = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_2_trident"), "main");
+
+
     public static void registerModels() {
 //        EntityModelLayerRegistry.registerModelLayer(NATION_1_VILLAGER, MalbiNationsCatVillagerModel::getTexturedModelData);
 //        EntityModelLayerRegistry.registerModelLayer(NATION_2_VILLAGER, MalbiNationsCatVillagerModel::getTexturedModelData);
@@ -37,6 +40,7 @@ public class ModModelLayers {
 //        EntityModelLayerRegistry.registerModelLayer(NATION_6_VILLAGER, MalbiNationsCatVillagerModel::getTexturedModelData);
 //        EntityModelLayerRegistry.registerModelLayer(NATION_7_VILLAGER, MalbiNationsCatVillagerModel::getTexturedModelData);
 //        EntityModelLayerRegistry.registerModelLayer(NATION_8_VILLAGER, MalbiNationsCatVillagerModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(NATION_2_TRIDENT, Nation4LibrarianVillager::getTexturedModelData);
     }
 }
 

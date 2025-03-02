@@ -11,8 +11,8 @@
   "item.nationsmod.essence_of_nation_10": "Essence of Nation 9",
 
   "item.nationsmod.nation_1_elytra": "Nation 1 Elytra",
-  "item.nationsmod.nation_2_elytra": "Nation 2 Elytra",
-  "item.nationsmod.nation_2_demon_elytra": "Nation 2 Demon Elytra",
+  "item.nationsmod.nation_2_elytra": "Angel Elytra",
+  "item.nationsmod.nation_2_demon_elytra": "Demented Elytra",
   "item.nationsmod.nation_3_elytra": "Nation 3 Elytra",
   "item.nationsmod.nation_4_elytra": "Nation 4 Elytra",
   "item.nationsmod.nation_5_elytra": "Nation 5 Elytra",
@@ -22,10 +22,16 @@
   "item.nationsmod.nation_9_elytra": "Nation 9 Elytra",
   "item.nationsmod.nation_10_elytra": "Nation 10 Elytra",
 
+  "item.nationsmod.nation_2_trident": "Angelic Boomerang",
   "item.nationsmod.nation_2_bow": "Nation 2 Bow",
   "item.nationsmod.nation_9_bow": "Nation 9 Bow",
   "item.nationsmod.nation_10_bow": "Nation 9 Bow",
 
+  "item.nationsmod.nation_2_diamond_axe": "Angelic Axe",
+  "item.nationsmod.nation_2_diamond_pickaxe": "Angelic Pickaxe",
+  "item.nationsmod.nation_2_diamond_sword": "Angelic Sword",
+  "item.nationsmod.nation_2_diamond_shovel": "Angelic Shovel",
+  "item.nationsmod.nation_2_diamond_hoe": "Angelic Hoe",
   "item.nationsmod.nation_3_netherite_sword": "Nation 3 Netherite Sword",
   "item.nationsmod.nation_5_netherite_axe": "Nation 5 Netherite Axe",
   "item.nationsmod.nation_5_netherite_pickaxe": "Nation 5 Netherite Pickaxe",
@@ -76,6 +82,8 @@
   "item.nationsmod.nation_6_hat": "Nation 6 Hat",
   "item.nationsmod.nation_8_hat": "Nation 8 Hat",
   "item.nationsmod.nation_9_hat": "Nation 9 Hat",
+
+  "item.nationsmod.nation_2_turtle_helmet": "Angel Halo",
 
   "entity.minecraft.villager.nationsmod.nation_1": "Nation 1",
   "entity.minecraft.villager.nationsmod.nation_2": "Nation 2",

@@ -1,0 +1,6 @@
+{
+  "parent": "nationsmod:item/nation_2_trident",
+  "textures": {
+    "layer0": "nationsmod:item/nation_2_trident_pulling_1"
+  }
+}

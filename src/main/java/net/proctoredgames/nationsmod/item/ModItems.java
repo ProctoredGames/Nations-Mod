@@ -1,5 +1,6 @@
 package net.proctoredgames.nationsmod.item;
 
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -7,6 +8,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.proctoredgames.nationsmod.NationsMod;
 import net.proctoredgames.nationsmod.item.custom.HatItem;
+import net.proctoredgames.nationsmod.item.custom.Nation2TridentItem;
 import net.proctoredgames.nationsmod.item.custom.NationElytraItem;
 import net.proctoredgames.nationsmod.item.custom.NationEssenceItem;
 
@@ -40,7 +42,7 @@ public class ModItems {
     public static final Item NATION_9_HAT = registerItem("nation_9_hat", new HatItem(new Item.Settings()));
 
     public static final Item NATION_2_TURTLE_HELMET = registerItem(
-            "nation_2_turtle_helmet", new ArmorItem(ArmorMaterials.TURTLE, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(25)))
+            "nation_2_turtle_helmet", new ArmorItem(ModArmorMaterials.NATION_2_TURTLE, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(25)))
     );
 
     public static final Item NATION_3_NETHERITE_SWORD = registerItem(
@@ -275,6 +277,17 @@ public class ModItems {
     public static final Item NATION_2_BOW = registerItem("nation_2_bow", new BowItem(new Item.Settings().maxDamage(384)));
     public static final Item NATION_9_BOW = registerItem("nation_9_bow", new BowItem(new Item.Settings().maxDamage(384)));
     public static final Item NATION_10_BOW = registerItem("nation_10_bow", new BowItem(new Item.Settings().maxDamage(384)));
+
+    public static final Item NATION_2_TRIDENT = registerItem(
+            "nation_2_trident",
+            new Nation2TridentItem(
+                    new Item.Settings()
+                            .rarity(Rarity.EPIC)
+                            .maxDamage(250)
+                            .attributeModifiers(TridentItem.createAttributeModifiers())
+                            .component(DataComponentTypes.TOOL, TridentItem.createToolComponent())
+            )
+    );
 
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, Identifier.of(NationsMod.MOD_ID, name), item);
