@@ -90,6 +90,7 @@ public class ModItemGroups {
                         entries.add(ModItems.NATION_9_BOW);
 
                         entries.add(ModItems.NATION_1_HAT);
+                        entries.add(ModItems.NATION_3_HAT);
                         entries.add(ModItems.NATION_4_HAT);
                         entries.add(ModItems.NATION_4_FLAMINGO_HAT);
                         entries.add(ModItems.NATION_5_HAT);

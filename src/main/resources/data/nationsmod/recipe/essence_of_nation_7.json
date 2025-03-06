@@ -9,7 +9,7 @@
       "item": "minecraft:oak_planks"
     },
     "*": {
-      "item": "minecraft:bone_meal"
+      "item": "minecraft:sweet_berries"
     }
   },
   "pattern": [
