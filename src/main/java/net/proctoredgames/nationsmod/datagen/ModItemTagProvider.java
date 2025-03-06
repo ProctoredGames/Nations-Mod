@@ -19,9 +19,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
 
 //        getOrCreateTagBuilder(ItemTags.TRIDENT_ENCHANTABLE)
-//                .add(ModItems.NATION_1_TRIDENT);
+//                .add(ModItems.NATION_4_TRIDENT);
 
         getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE)
+                .add(ModItems.NATION_2_BOW)
                 .add(ModItems.NATION_8_BOW)
                 .add(ModItems.NATION_9_BOW);
 
@@ -30,6 +31,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.NATION_8_NETHERITE_SWORD)
                 .add(ModItems.NATION_3_NETHERITE_SWORD)
                 .add(ModItems.NATION_2_NETHERITE_SWORD)
+                .add(ModItems.NATION_7_NETHERITE_SWORD)
                 .add(ModItems.NATION_9_NETHERITE_SWORD);
         getOrCreateTagBuilder(ItemTags.PICKAXES)
                 .add(ModItems.NATION_9_NETHERITE_PICKAXE)

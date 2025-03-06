@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "nationsmod:item/nation_4_elytra"
-  }
-}

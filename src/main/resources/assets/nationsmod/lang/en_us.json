@@ -8,6 +8,7 @@
   "item.nationsmod.essence_of_nation_7": "Essence of Nation 7",
   "item.nationsmod.essence_of_nation_8": "Essence of Nation 8",
   "item.nationsmod.essence_of_nation_9": "Essence of Nation 9",
+  "item.nationsmod.essence_of_nation_10": "Essence of Nation 10",
 
   "item.nationsmod.nation_1_elytra": "Nation 1 Elytra",
   "item.nationsmod.nation_2_elytra": "Nation 2 Elytra",
@@ -18,6 +19,7 @@
   "item.nationsmod.nation_7_elytra": "Nation 7 Elytra",
   "item.nationsmod.nation_8_elytra": "Nation 8 Elytra",
   "item.nationsmod.nation_9_elytra": "Nation 9 Elytra",
+  "item.nationsmod.nation_10_elytra": "Nation 10 Elytra",
 
   "item.nationsmod.nation_8_bow": "Nation 8 Bow",
   "item.nationsmod.nation_9_bow": "Nation 9 Bow",
@@ -64,6 +66,8 @@
   "item.nationsmod.invisible_diamond_leggings": "Invisible Diamond Leggings",
   "item.nationsmod.invisible_diamond_boots": "Invisible Diamond Boots",
 
+  "item.nationsmod.nation_4_trident": "Nation 4 Trident",
+
   "item.nationsmod.nation_1_hat": "Nation 1 Hat",
   "item.nationsmod.nation_4_hat": "Nation 4 Hat",
   "item.nationsmod.nation_5_hat": "Nation 5 Hat",
@@ -79,6 +83,7 @@
   "entity.minecraft.villager.nationsmod.nation_7": "Nation 7",
   "entity.minecraft.villager.nationsmod.nation_8": "Nation 8",
   "entity.minecraft.villager.nationsmod.nation_9": "Nation 9",
+  "entity.minecraft.villager.nationsmod.nation_10": "Nation 10",
 
 
   "itemgroup.nationsmod.nations_mod": "Nations Mod"

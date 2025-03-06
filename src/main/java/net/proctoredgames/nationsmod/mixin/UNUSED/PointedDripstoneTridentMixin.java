@@ -8,6 +8,7 @@
 //import net.minecraft.util.math.BlockPos;
 //import net.minecraft.world.World;
 ////import net.proctoredgames.nationsmod.entity.custom.Nation2TridentEntity;
+//import net.proctoredgames.nationsmod.entity.custom.Nation4TridentEntity;
 //import org.spongepowered.asm.mixin.Mixin;
 //import org.spongepowered.asm.mixin.injection.At;
 //import org.spongepowered.asm.mixin.injection.Inject;
@@ -21,7 +22,7 @@
 //            BlockPos blockPos = hit.getBlockPos();
 //            if (projectile.canModifyAt(world, blockPos)
 //                    && projectile.canBreakBlocks(world)
-//                    && (projectile instanceof TridentEntity || projectile instanceof Nation2TridentEntity)
+//                    && (projectile instanceof TridentEntity || projectile instanceof Nation4TridentEntity)
 //                    && projectile.getVelocity().length() > 0.6) {
 //                world.breakBlock(blockPos, true);
 //            }

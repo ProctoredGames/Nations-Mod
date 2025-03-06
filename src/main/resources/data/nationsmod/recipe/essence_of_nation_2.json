@@ -9,7 +9,7 @@
       "item": "minecraft:oak_planks"
     },
     "*": {
-      "item": "minecraft:bone_meal"
+      "item": "minecraft:light_blue_dye"
     }
   },
   "pattern": [
@@ -19,6 +19,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "nationsmod:essence_of_nation_7"
+    "id": "nationsmod:essence_of_nation_2"
   }
 }

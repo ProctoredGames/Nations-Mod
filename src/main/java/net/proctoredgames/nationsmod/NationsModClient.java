@@ -7,6 +7,7 @@ import net.minecraft.client.render.RenderLayer;
 import net.proctoredgames.nationsmod.entity.ModEntities;
 import net.proctoredgames.nationsmod.entity.client.ModModelLayers;
 //import net.proctoredgames.nationsmod.entity.client.Nation2TridentEntityRenderer;
+//import net.proctoredgames.nationsmod.entity.client.Nation4TridentEntityRenderer;
 import net.proctoredgames.nationsmod.item.ModItems;
 
 public class NationsModClient implements ClientModInitializer {
@@ -14,8 +15,8 @@ public class NationsModClient implements ClientModInitializer {
     public void onInitializeClient() {
         ModModelLayers.registerModels();
 //        EntityRendererRegistry.register(
-//                ModEntities.NATION_1_TRIDENT,
-//                Nation2TridentEntityRenderer::new
+//                ModEntities.NATION_4_TRIDENT,
+//                Nation4TridentEntityRenderer::new
 //        );
     }
 }

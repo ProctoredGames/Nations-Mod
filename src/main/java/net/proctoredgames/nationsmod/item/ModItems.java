@@ -22,25 +22,37 @@ public class ModItems {
     public static final Item ESSENCE_OF_NATION_7 = registerItem("essence_of_nation_7", new NationEssenceItem(new Item.Settings(), 7));
     public static final Item ESSENCE_OF_NATION_8 = registerItem("essence_of_nation_8", new NationEssenceItem(new Item.Settings(), 8));
     public static final Item ESSENCE_OF_NATION_9 = registerItem("essence_of_nation_9", new NationEssenceItem(new Item.Settings(), 9));
+    public static final Item ESSENCE_OF_NATION_10 = registerItem("essence_of_nation_10", new NationEssenceItem(new Item.Settings(), 10));
 
     public static final Item NATION_1_ELYTRA = registerItem("nation_1_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 1));
     public static final Item NATION_2_ELYTRA = registerItem("nation_2_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 2));
-    public static final Item NATION_3_ELYTRA = registerItem("nation_3_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 4));
+    public static final Item NATION_3_ELYTRA = registerItem("nation_3_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 3));
 //    public static final Item NATION_4_ELYTRA = registerItem("nation_4_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 4));
     public static final Item NATION_5_ELYTRA = registerItem("nation_5_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 5));
     public static final Item NATION_6_ELYTRA = registerItem("nation_6_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 6));
     public static final Item NATION_7_ELYTRA = registerItem("nation_7_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 7));
     public static final Item NATION_8_ELYTRA = registerItem("nation_8_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 8));
     public static final Item NATION_9_ELYTRA = registerItem("nation_9_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 9));
+    public static final Item NATION_10_ELYTRA = registerItem("nation_10_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 10));
 
     public static final Item NATION_1_HAT = registerItem("nation_1_hat", new HatItem(new Item.Settings()));
     public static final Item NATION_4_HAT = registerItem("nation_4_hat", new HatItem(new Item.Settings()));
+    public static final Item NATION_4_FLAMINGO_HAT = registerItem("nation_4_flamingo_hat", new HatItem(new Item.Settings()));
     public static final Item NATION_5_HAT = registerItem("nation_5_hat", new HatItem(new Item.Settings()));
     public static final Item NATION_7_HAT = registerItem("nation_7_hat", new HatItem(new Item.Settings()));
     public static final Item NATION_8_HAT = registerItem("nation_8_hat", new HatItem(new Item.Settings()));
+    public static final Item NATION_9_HAT = registerItem("nation_9_hat", new HatItem(new Item.Settings()));
+    public static final Item NATION_10_HAT = registerItem("nation_10_hat", new HatItem(new Item.Settings()));
 
     public static final Item NATION_2_NETHERITE_SWORD = registerItem(
             "nation_2_netherite_sword",
+            new SwordItem(
+                    ToolMaterials.NETHERITE, new Item.Settings().fireproof().attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.NETHERITE, 3, -2.4F))
+            )
+    );
+
+    public static final Item NATION_7_NETHERITE_SWORD = registerItem(
+            "nation_7_netherite_sword",
             new SwordItem(
                     ToolMaterials.NETHERITE, new Item.Settings().fireproof().attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.NETHERITE, 3, -2.4F))
             )
@@ -230,19 +242,10 @@ public class ModItems {
             new ArmorItem(ModArmorMaterials.INVISIBLE_DIAMOND, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(33)))
     );
 
+    public static final Item NATION_2_BOW = registerItem("nation_2_bow", new BowItem(new Item.Settings().maxDamage(384)));
+    public static final Item NATION_4_BOW = registerItem("nation_4_bow", new BowItem(new Item.Settings().maxDamage(384)));
     public static final Item NATION_8_BOW = registerItem("nation_8_bow", new BowItem(new Item.Settings().maxDamage(384)));
     public static final Item NATION_9_BOW = registerItem("nation_9_bow", new BowItem(new Item.Settings().maxDamage(384)));
-
-//    public static final Item NATION_1_TRIDENT = registerItem(
-//            "nation_1_trident",
-//            new Nation2TridentItem(
-//                    new Item.Settings()
-//                            .rarity(Rarity.EPIC)
-//                            .maxDamage(250)
-//                            .attributeModifiers(TridentItem.createAttributeModifiers())
-//                            .component(DataComponentTypes.TOOL, TridentItem.createToolComponent())
-//            )
-//    );
 
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, Identifier.of(NationsMod.MOD_ID, name), item);

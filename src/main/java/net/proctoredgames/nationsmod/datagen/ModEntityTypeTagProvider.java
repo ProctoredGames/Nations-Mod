@@ -19,10 +19,10 @@ public class ModEntityTypeTagProvider extends FabricTagProvider.EntityTypeTagPro
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
 
 //        getOrCreateTagBuilder(EntityTypeTags.IMPACT_PROJECTILES)
-//                .add(ModEntities.NATION_1_TRIDENT);
+//                .add(ModEntities.NATION_4_TRIDENT);
 //
 //        getOrCreateTagBuilder(EntityTypeTags.REDIRECTABLE_PROJECTILE)
-//                .add(ModEntities.NATION_1_TRIDENT);
+//                .add(ModEntities.NATION_4_TRIDENT);
 
     }
 }

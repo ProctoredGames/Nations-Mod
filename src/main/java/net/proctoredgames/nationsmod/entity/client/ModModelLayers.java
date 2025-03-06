@@ -10,17 +10,20 @@ import net.proctoredgames.nationsmod.entity.client.villagers.Nation4LibrarianVil
 
 public class ModModelLayers {
     public static final EntityModelLayer NATION_1_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_1_villager"), "main");
+    public static final EntityModelLayer NATION_2_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_1_villager"), "main");
+    public static final EntityModelLayer NATION_3_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_1_villager"), "main");
 
-    public static final EntityModelLayer NATION_3_BUTCHER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_3_butcher"), "main");
-    public static final EntityModelLayer NATION_3_FISHERMAN = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_3_fisherman"), "main");
-    public static final EntityModelLayer NATION_3_LIBRARIAN = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_3_librarian"), "main");
+    public static final EntityModelLayer NATION_4_BUTCHER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_4_butcher"), "main");
+    public static final EntityModelLayer NATION_4_FISHERMAN = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_4_fisherman"), "main");
+    public static final EntityModelLayer NATION_4_LIBRARIAN = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_4_librarian"), "main");
 
-    public static final EntityModelLayer NATION_4_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_4_villager"), "main");
     public static final EntityModelLayer NATION_5_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_5_villager"), "main");
     public static final EntityModelLayer NATION_6_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_6_villager"), "main");
     public static final EntityModelLayer NATION_7_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_7_villager"), "main");
     public static final EntityModelLayer NATION_8_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_8_villager"), "main");
     public static final EntityModelLayer NATION_9_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_9_villager"), "main");
+    public static final EntityModelLayer NATION_10_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_9_villager"), "main");
+
 
 //    public static final EntityModelLayer NATION_1_TRIDENT = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_1_trident"), "main");
 
@@ -30,9 +33,9 @@ public class ModModelLayers {
 //        EntityModelLayerRegistry.registerModelLayer(NATION_1_VILLAGER, MalbiNationsCatVillagerModel::getTexturedModelData);
 //        EntityModelLayerRegistry.registerModelLayer(NATION_1_VILLAGER, MalbiNationsCatVillagerModel::getTexturedModelData);
 
-        EntityModelLayerRegistry.registerModelLayer(NATION_3_BUTCHER, Nation4ButcherVillager::getTexturedModelData);
-        EntityModelLayerRegistry.registerModelLayer(NATION_3_FISHERMAN, Nation4FishermanVillager::getTexturedModelData);
-        EntityModelLayerRegistry.registerModelLayer(NATION_3_LIBRARIAN, Nation4LibrarianVillager::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(NATION_4_BUTCHER, Nation4ButcherVillager::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(NATION_4_FISHERMAN, Nation4FishermanVillager::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(NATION_4_LIBRARIAN, Nation4LibrarianVillager::getTexturedModelData);
 
 //        EntityModelLayerRegistry.registerModelLayer(NATION_4_VILLAGER, MalbiNationsCatVillagerModel::getTexturedModelData);
 //        EntityModelLayerRegistry.registerModelLayer(NATION_5_VILLAGER, MalbiNationsCatVillagerModel::getTexturedModelData);
