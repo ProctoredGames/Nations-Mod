@@ -247,6 +247,8 @@ public class ModItems {
     public static final Item NATION_8_BOW = registerItem("nation_8_bow", new BowItem(new Item.Settings().maxDamage(384)));
     public static final Item NATION_9_BOW = registerItem("nation_9_bow", new BowItem(new Item.Settings().maxDamage(384)));
 
+    public static final Item GOLD_NUGGET_NATION_2 = registerItem("gold_nugget_nation_2", new Item(new Item.Settings()));
+
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, Identifier.of(NationsMod.MOD_ID, name), item);
     }

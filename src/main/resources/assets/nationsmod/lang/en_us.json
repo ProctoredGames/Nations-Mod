@@ -21,6 +21,8 @@
   "item.nationsmod.nation_9_elytra": "Nation 9 Elytra",
   "item.nationsmod.nation_10_elytra": "Nation 10 Elytra",
 
+  "item.nationsmod.nation_2_bow": "Nation 2 Bow",
+  "item.nationsmod.nation_4_bow": "Nation 4 Bow",
   "item.nationsmod.nation_8_bow": "Nation 8 Bow",
   "item.nationsmod.nation_9_bow": "Nation 9 Bow",
 
@@ -29,6 +31,7 @@
   "item.nationsmod.nation_3_netherite_pickaxe": "Nation 3 Netherite Pickaxe",
   "item.nationsmod.nation_3_netherite_sword": "Nation 3 Netherite Sword",
   "item.nationsmod.nation_3_netherite_shovel": "Nation 3 Netherite Shovel",
+  "item.nationsmod.nation_7_netherite_sword": "Nation 7 Netherite Sword",
   "item.nationsmod.nation_8_netherite_axe": "Nation 8 Netherite Axe",
   "item.nationsmod.nation_8_netherite_pickaxe": "Nation 8 Netherite Pickaxe",
   "item.nationsmod.nation_8_netherite_sword": "Nation 8 Netherite Sword",
@@ -70,9 +73,14 @@
 
   "item.nationsmod.nation_1_hat": "Nation 1 Hat",
   "item.nationsmod.nation_4_hat": "Nation 4 Hat",
+  "item.nationsmod.nation_4_flamingo_hat": "Nation 4 Flamingo Hat",
   "item.nationsmod.nation_5_hat": "Nation 5 Hat",
   "item.nationsmod.nation_7_hat": "Nation 7 Hat",
   "item.nationsmod.nation_8_hat": "Nation 8 Hat",
+  "item.nationsmod.nation_9_hat": "Nation 9 Hat",
+  "item.nationsmod.nation_10_hat": "Nation 10 Hat",
+
+  "item.nationsmod.gold_nugget_nation_2": "Gold Nugget Nation 2",
 
   "entity.minecraft.villager.nationsmod.nation_1": "Nation 1",
   "entity.minecraft.villager.nationsmod.nation_2": "Nation 2",

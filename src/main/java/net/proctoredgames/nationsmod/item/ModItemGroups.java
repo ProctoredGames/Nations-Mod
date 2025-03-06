@@ -98,6 +98,8 @@ public class ModItemGroups {
                         entries.add(ModItems.NATION_9_HAT);
                         entries.add(ModItems.NATION_10_HAT);
 
+                        entries.add(ModItems.GOLD_NUGGET_NATION_2);
+
                     }).build());
 
 
