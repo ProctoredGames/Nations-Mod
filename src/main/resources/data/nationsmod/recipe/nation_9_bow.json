@@ -3,14 +3,14 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "minecraft:elytra"
+      "item": "minecraft:bow"
     },
     {
-      "item": "nationsmod:essence_of_nation_2"
+      "item": "nationsmod:essence_of_nation_9"
     }
   ],
   "result": {
     "count": 1,
-    "id": "nationsmod:nation_2_elytra"
+    "id": "nationsmod:nation_9_bow"
   }
 }

@@ -28,7 +28,6 @@ public class NationsMod implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModVillagers.registerVillagers();
 		ModItems.registerModItems();
-		ModModelPredicates.registerModelPredicates();
 		ModEntities.registerModEntities();
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {

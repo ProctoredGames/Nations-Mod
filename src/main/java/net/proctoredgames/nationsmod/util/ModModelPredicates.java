@@ -9,7 +9,6 @@ import net.proctoredgames.nationsmod.item.ModItems;
 public class ModModelPredicates {
     public static void registerModelPredicates() {
         registerCustomBow(ModItems.NATION_2_BOW);
-        registerCustomBow(ModItems.NATION_4_BOW);
         registerCustomBow(ModItems.NATION_9_BOW);
     }
 
