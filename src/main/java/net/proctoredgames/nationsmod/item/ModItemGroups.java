@@ -35,6 +35,7 @@ public class ModItemGroups {
                         entries.add(ModItems.NATION_7_ELYTRA);
                         entries.add(ModItems.NATION_8_ELYTRA);
                         entries.add(ModItems.NATION_9_ELYTRA);
+                        entries.add(ModItems.NATION_9_ROYAL_ELYTRA);
                         entries.add(ModItems.NATION_10_ELYTRA);
 
                         entries.add(ModItems.NATION_2_NETHERITE_SWORD);

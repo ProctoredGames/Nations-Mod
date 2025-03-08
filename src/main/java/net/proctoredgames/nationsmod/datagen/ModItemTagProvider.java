@@ -23,6 +23,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE)
                 .add(ModItems.NATION_2_BOW)
+                .add(ModItems.NATION_4_BOW)
                 .add(ModItems.NATION_8_BOW)
                 .add(ModItems.NATION_9_BOW);
 

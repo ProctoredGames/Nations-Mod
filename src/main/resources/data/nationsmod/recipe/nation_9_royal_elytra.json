@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:elytra"
+    },
+    {
+      "item": "minecraft:raw_gold"
+    },
+    {
+      "item": "nationsmod:essence_of_nation_9"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "nationsmod:nation_9_royal_elytra"
+  }
+}

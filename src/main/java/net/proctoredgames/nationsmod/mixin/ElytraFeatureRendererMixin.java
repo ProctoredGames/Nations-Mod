@@ -100,6 +100,7 @@ public abstract class ElytraFeatureRendererMixin <T extends LivingEntity, M exte
             case 7 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_7_elytra.png");
             case 8 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_8_elytra.png");
             case 9 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_9_elytra.png");
+            case -9 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_9_royal_elytra.png");
             case 10 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/nation_10_elytra.png");
             default -> Identifier.ofVanilla("textures/entity/elytra.png");
         };

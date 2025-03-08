@@ -33,6 +33,7 @@ public class ModItems {
     public static final Item NATION_7_ELYTRA = registerItem("nation_7_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 7));
     public static final Item NATION_8_ELYTRA = registerItem("nation_8_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 8));
     public static final Item NATION_9_ELYTRA = registerItem("nation_9_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 9));
+    public static final Item NATION_9_ROYAL_ELYTRA = registerItem("nation_9_royal_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), -9));
     public static final Item NATION_10_ELYTRA = registerItem("nation_10_elytra", new NationElytraItem(new Item.Settings().maxDamage(432).rarity(Rarity.UNCOMMON), 10));
 
     public static final Item NATION_1_HAT = registerItem("nation_1_hat", new HatItem(new Item.Settings()));
