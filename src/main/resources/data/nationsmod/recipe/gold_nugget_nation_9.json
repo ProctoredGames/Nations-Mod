@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:gold_nugget"
+    },
+    {
+      "item": "nationsmod:essence_of_nation_9"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "nationsmod:gold_nugget_nation_9"
+  }
+}

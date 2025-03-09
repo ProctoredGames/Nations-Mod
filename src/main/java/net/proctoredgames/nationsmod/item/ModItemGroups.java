@@ -101,6 +101,8 @@ public class ModItemGroups {
                         entries.add(ModItems.NATION_10_HAT);
 
                         entries.add(ModItems.GOLD_NUGGET_NATION_2);
+                        entries.add(ModItems.GOLD_NUGGET_NATION_4);
+                        entries.add(ModItems.GOLD_NUGGET_NATION_9);
 
                     }).build());
 
