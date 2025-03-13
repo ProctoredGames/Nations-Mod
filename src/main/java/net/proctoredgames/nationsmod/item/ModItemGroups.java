@@ -16,7 +16,7 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.nationsmod.nations_mod"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.ESSENCE_OF_NATION_1);
-                        entries.add(ModItems.ESSENCE_OF_NATION_2);
+//                        entries.add(ModItems.ESSENCE_OF_NATION_2);
                         entries.add(ModItems.ESSENCE_OF_NATION_3);
                         entries.add(ModItems.ESSENCE_OF_NATION_4);
                         entries.add(ModItems.ESSENCE_OF_NATION_5);
@@ -27,7 +27,7 @@ public class ModItemGroups {
                         entries.add(ModItems.ESSENCE_OF_NATION_10);
 
                         entries.add(ModItems.NATION_1_ELYTRA);
-                        entries.add(ModItems.NATION_2_ELYTRA);
+//                        entries.add(ModItems.NATION_2_ELYTRA);
                         entries.add(ModItems.NATION_3_ELYTRA);
 //                        entries.add(ModItems.NATION_4_ELYTRA);
                         entries.add(ModItems.NATION_5_ELYTRA);
@@ -38,7 +38,7 @@ public class ModItemGroups {
                         entries.add(ModItems.NATION_9_ROYAL_ELYTRA);
                         entries.add(ModItems.NATION_10_ELYTRA);
 
-                        entries.add(ModItems.NATION_2_NETHERITE_SWORD);
+//                        entries.add(ModItems.NATION_2_NETHERITE_SWORD);
                         entries.add(ModItems.NATION_3_NETHERITE_SHOVEL);
                         entries.add(ModItems.NATION_3_NETHERITE_PICKAXE);
                         entries.add(ModItems.NATION_3_NETHERITE_AXE);
@@ -54,14 +54,14 @@ public class ModItemGroups {
 
 //                        entries.add(ModItems.NATION_4_TRIDENT);
 
-                        entries.add(ModItems.NATION_2_IRON_HELMET);
-                        entries.add(ModItems.NATION_2_IRON_CHESTPLATE);
-                        entries.add(ModItems.NATION_2_IRON_LEGGINGS);
-                        entries.add(ModItems.NATION_2_IRON_BOOTS);
-                        entries.add(ModItems.NATION_2_NETHERITE_HELMET);
-                        entries.add(ModItems.NATION_2_NETHERITE_CHESTPLATE);
-                        entries.add(ModItems.NATION_2_NETHERITE_LEGGINGS);
-                        entries.add(ModItems.NATION_2_NETHERITE_BOOTS);
+//                        entries.add(ModItems.NATION_2_IRON_HELMET);
+//                        entries.add(ModItems.NATION_2_IRON_CHESTPLATE);
+//                        entries.add(ModItems.NATION_2_IRON_LEGGINGS);
+//                        entries.add(ModItems.NATION_2_IRON_BOOTS);
+//                        entries.add(ModItems.NATION_2_NETHERITE_HELMET);
+//                        entries.add(ModItems.NATION_2_NETHERITE_CHESTPLATE);
+//                        entries.add(ModItems.NATION_2_NETHERITE_LEGGINGS);
+//                        entries.add(ModItems.NATION_2_NETHERITE_BOOTS);
                         entries.add(ModItems.NATION_3_NETHERITE_HELMET);
                         entries.add(ModItems.NATION_3_NETHERITE_CHESTPLATE);
                         entries.add(ModItems.NATION_3_NETHERITE_LEGGINGS);
@@ -75,17 +75,17 @@ public class ModItemGroups {
                         entries.add(ModItems.NATION_9_NETHERITE_LEGGINGS);
                         entries.add(ModItems.NATION_9_NETHERITE_BOOTS);
 
-                        entries.add(ModItems.INVISIBLE_DIAMOND_HELMET);
-                        entries.add(ModItems.INVISIBLE_DIAMOND_CHESTPLATE);
-                        entries.add(ModItems.INVISIBLE_DIAMOND_LEGGINGS);
-                        entries.add(ModItems.INVISIBLE_DIAMOND_BOOTS);
+//                        entries.add(ModItems.INVISIBLE_DIAMOND_HELMET);
+//                        entries.add(ModItems.INVISIBLE_DIAMOND_CHESTPLATE);
+//                        entries.add(ModItems.INVISIBLE_DIAMOND_LEGGINGS);
+//                        entries.add(ModItems.INVISIBLE_DIAMOND_BOOTS);
+//
+//                        entries.add(ModItems.INVISIBLE_NETHERITE_HELMET);
+//                        entries.add(ModItems.INVISIBLE_NETHERITE_CHESTPLATE);
+//                        entries.add(ModItems.INVISIBLE_NETHERITE_LEGGINGS);
+//                        entries.add(ModItems.INVISIBLE_NETHERITE_BOOTS);
 
-                        entries.add(ModItems.INVISIBLE_NETHERITE_HELMET);
-                        entries.add(ModItems.INVISIBLE_NETHERITE_CHESTPLATE);
-                        entries.add(ModItems.INVISIBLE_NETHERITE_LEGGINGS);
-                        entries.add(ModItems.INVISIBLE_NETHERITE_BOOTS);
-
-                        entries.add(ModItems.NATION_2_BOW);
+//                        entries.add(ModItems.NATION_2_BOW);
                         entries.add(ModItems.NATION_4_BOW);
                         entries.add(ModItems.NATION_8_BOW);
                         entries.add(ModItems.NATION_9_BOW);
