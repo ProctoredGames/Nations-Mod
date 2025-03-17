@@ -3,11 +3,8 @@
 	"package": "net.proctoredgames.nationsmod.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ElytraFeatureRendererMixin",
-		"EnchantmentMixin",
-		"PlayerEntityNationElytraMixin",
-		"LivingEntityNationElytraMixin",
-		"AbstractClientPlayerEntityMixin",
+		"VillagerEntityMixin",
+		"VillagerEntityRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

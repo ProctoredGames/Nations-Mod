@@ -4,9 +4,6 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
-import net.proctoredgames.nationsmod.datagen.ModEntityTypeTagProvider;
-import net.proctoredgames.nationsmod.datagen.ModItemTagProvider;
-import net.proctoredgames.nationsmod.datagen.ModModelProvider;
 
 public class NationsModDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -14,10 +11,10 @@ public class NationsModDataGenerator implements DataGeneratorEntrypoint {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
 //		pack.addProvider(ModBlockTagProvider::new);
-		pack.addProvider(ModItemTagProvider::new);
-		pack.addProvider(ModEntityTypeTagProvider::new);
+//		pack.addProvider(ModItemTagProvider::new);
+//		pack.addProvider(ModEntityTypeTagProvider::new);
 //		pack.addProvider(ModLootTableProvider::new);
-		pack.addProvider(ModModelProvider::new);
+//		pack.addProvider(ModModelProvider::new);
 //		pack.addProvider(ModRecipeProvider::new);
 //		pack.addProvider(ModRegistryDataGenerator::new);
 	}

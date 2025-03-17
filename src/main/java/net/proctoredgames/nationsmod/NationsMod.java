@@ -9,10 +9,6 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.text.TextColor;
-import net.proctoredgames.nationsmod.entity.ModEntities;
-import net.proctoredgames.nationsmod.item.ModItemGroups;
-import net.proctoredgames.nationsmod.item.ModItems;
-import net.proctoredgames.nationsmod.util.ModModelPredicates;
 import net.proctoredgames.nationsmod.villager.ModVillagers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,10 +21,7 @@ public class NationsMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ModItemGroups.registerItemGroups();
 		ModVillagers.registerVillagers();
-		ModItems.registerModItems();
-		ModEntities.registerModEntities();
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			dispatcher.register(CommandManager.literal("x_write_mod_author_info")

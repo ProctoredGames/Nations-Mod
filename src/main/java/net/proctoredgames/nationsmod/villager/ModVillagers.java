@@ -3,6 +3,7 @@ package net.proctoredgames.nationsmod.villager;
 import com.google.common.collect.ImmutableSet;
 import net.fabricmc.fabric.api.object.builder.v1.world.poi.PointOfInterestHelper;
 import net.minecraft.block.Block;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -12,6 +13,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.village.VillagerProfession;
 import net.minecraft.village.VillagerType;
 import net.minecraft.world.poi.PointOfInterestType;
+import net.minecraft.world.poi.PointOfInterestTypes;
 import net.proctoredgames.nationsmod.NationsMod;
 
 public class ModVillagers {
@@ -29,6 +31,7 @@ public class ModVillagers {
     public static final VillagerType NATION_9 = registerType("nation_9");
     public static final VillagerType NATION_10 = registerType("nation_10");
 
+    public static final VillagerProfession NATION_9_BUTCHER = registerProfession("nation_9_butcher", PointOfInterestTypes.BUTCHER);
 
     private static VillagerType registerType(String name) {
         return Registry.register(Registries.VILLAGER_TYPE, Identifier.of(NationsMod.MOD_ID, name),
