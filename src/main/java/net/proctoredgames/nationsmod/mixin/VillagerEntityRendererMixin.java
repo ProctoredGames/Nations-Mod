@@ -42,8 +42,8 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
 
     @Inject(method = "getTexture", at = @At("HEAD"), cancellable = true)
     private void getModifiedAppearance(VillagerEntity villager, CallbackInfoReturnable<Identifier> cir) {
-        int nationNumber = ((NationBased) villager).getNation();
-        if(villager instanceof NationBased && context != null && nationNumber != 0){
+        if(villager instanceof NationBased && context != null){
+            int nationNumber = ((NationBased) villager).getNation();
             switch(nationNumber){
                 case 3:
                     this.features.clear();
