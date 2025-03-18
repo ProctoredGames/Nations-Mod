@@ -24,6 +24,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import java.util.Random;
+
 @Mixin(VillagerEntity.class)
 public abstract class VillagerEntityMixin extends PassiveEntity implements NationBased{
 
@@ -41,11 +43,16 @@ public abstract class VillagerEntityMixin extends PassiveEntity implements Natio
 
         VillagerData oldData = villager.getVillagerData();
 
+        Random random = new Random();
         VillagerType newType = null;
         if(stack.getItem() == Items.PINK_PETALS){
             newType = ModVillagers.NATION_3;
         } else if(stack.getItem() == Items.PRISMARINE_SHARD){
-            newType = ModVillagers.NATION_4;
+            if(random.nextBoolean()){
+                newType = ModVillagers.NATION_4_PINK;
+            } else {
+                newType = ModVillagers.NATION_4;
+            }
         } else if(stack.getItem() == Items.ICE){
             newType = ModVillagers.NATION_9;
         } else{
@@ -83,7 +90,9 @@ public abstract class VillagerEntityMixin extends PassiveEntity implements Natio
             nation = 2;
         } else if(type == ModVillagers.NATION_3){
             nation = 3;
-        } else if(type == ModVillagers.NATION_4){
+        } else if(type == ModVillagers.NATION_4) {
+            nation = 4;
+        } else if(type == ModVillagers.NATION_4_PINK){
             nation = 4;
         } else if(type == ModVillagers.NATION_5){
             nation = 5;

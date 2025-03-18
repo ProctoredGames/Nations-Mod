@@ -3,12 +3,16 @@ package net.proctoredgames.nationsmod.entity.client.villagers;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
+import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.passive.VillagerEntity;
+import net.minecraft.util.Identifier;
+import net.proctoredgames.nationsmod.NationsMod;
 
 // Exported for Minecraft version 1.17+ for Yarn
 // Paste this class into your mod and generate all required imports
 public class Nation3Villager extends EntityModel<VillagerEntity> {
+    public static final EntityModelLayer NATION_3_VILLAGER = new EntityModelLayer(Identifier.of(NationsMod.MOD_ID, "nation_3_villager"), "main");
     private final ModelPart body;
     private final ModelPart left_wing;
     private final ModelPart bone6;
