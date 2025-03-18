@@ -56,6 +56,7 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
             } else {
                 // Reset to the default model and features for other nations
                 this.model = defaultModel;
+                this.features.clear();
                 this.addFeature(new HeadFeatureRenderer<>((FeatureRendererContext) this, context.getModelLoader(), context.getHeldItemRenderer()));
                 this.addFeature(new VillagerClothingFeatureRenderer<>((FeatureRendererContext) this, context.getResourceManager(), "villager"));
                 this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
