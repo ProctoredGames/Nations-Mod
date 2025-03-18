@@ -53,6 +53,16 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
                 this.model = new Nation3Villager(context.getPart(Nation3Villager.NATION_3_VILLAGER));
                 this.features.clear();
                 this.features.add(new VillagerHeldItemFeatureRenderer((FeatureRendererContext<VillagerEntity, EntityModel<VillagerEntity>>) this, context.getHeldItemRenderer()));
+            }else if (nationNumber == 4) {
+                this.model = defaultModel;
+                this.features.clear();
+                this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
+            }else if (nationNumber == 9) {
+                this.model = defaultModel;
+                this.features.clear();
+                this.addFeature(new HeadFeatureRenderer<>((FeatureRendererContext) this, context.getModelLoader(), context.getHeldItemRenderer()));
+                this.addFeature(new VillagerClothingFeatureRenderer<>((FeatureRendererContext) this, context.getResourceManager(), "villager"));
+                this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
             } else {
                 // Reset to the default model and features for other nations
                 this.model = defaultModel;
@@ -61,13 +71,14 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
                 this.addFeature(new VillagerClothingFeatureRenderer<>((FeatureRendererContext) this, context.getResourceManager(), "villager"));
                 this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
             }
-
-            Identifier texture = switch (nationNumber) {
-                case 3 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/type/nation_3.png");
-                case 4 -> getNation4VillagerTexture(villager.getVillagerData().getProfession(), villager.getVillagerData().getType());
-                case 9 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/type/nation_9.png");
-                default -> Identifier.ofVanilla("textures/entity/villager/villager.png");
-            };
+            Identifier texture = Identifier.ofVanilla("textures/entity/villager/villager.png");
+            if(nationNumber == 3){
+                texture = Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/type/nation_3.png");
+            } else if(nationNumber == 4){
+                texture = getNation4VillagerTexture(villager.getVillagerData().getProfession(), villager.getVillagerData().getType());
+            } else if(nationNumber == 9){
+                texture = Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/type/nation_9.png");
+            }
 
             cir.setReturnValue(texture);
         }
