@@ -8,7 +8,6 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.entity.EntityType;
 import net.proctoredgames.nationsmod.entity.client.villagers.Nation3Villager;
-import net.proctoredgames.nationsmod.entity.client.villagers.Nation3VillagerRenderer;
 //import net.proctoredgames.nationsmod.entity.client.Nation2TridentEntityRenderer;
 //import net.proctoredgames.nationsmod.entity.client.Nation4TridentEntityRenderer;
 
