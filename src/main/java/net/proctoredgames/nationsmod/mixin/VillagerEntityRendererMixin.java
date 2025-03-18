@@ -18,6 +18,7 @@ import net.proctoredgames.nationsmod.NationsMod;
 import net.proctoredgames.nationsmod.NationBased;
 //import net.proctoredgames.nationsmod.entity.client.villagers.Nation4FishermanVillager;
 //import net.proctoredgames.nationsmod.entity.client.villagers.Nation4LibrarianVillager;
+import net.proctoredgames.nationsmod.entity.client.villagers.Nation3Villager;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -47,7 +48,10 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
             switch(nationNumber){
                 case 3:
                     this.features.clear();
-//                    super.model = new Nation3Villager(context.getPart(EntityModelLayers.VILLAGER));
+                    super.model = new Nation3Villager(context.getPart(EntityModelLayers.VILLAGER));
+                    break;
+                case 4:
+                    this.features.clear();
                     break;
                 default:
                     break;

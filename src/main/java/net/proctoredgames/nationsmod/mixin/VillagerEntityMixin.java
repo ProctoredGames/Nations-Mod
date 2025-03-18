@@ -42,9 +42,9 @@ public abstract class VillagerEntityMixin extends PassiveEntity implements Natio
         VillagerData oldData = villager.getVillagerData();
 
         VillagerType newType = null;
-        if(stack.getItem() == Items.PINK_WOOL){
+        if(stack.getItem() == Items.PINK_PETALS){
             newType = ModVillagers.NATION_3;
-        } else if(stack.getItem() == Items.PINK_PETALS){
+        } else if(stack.getItem() == Items.PRISMARINE_SHARD){
             newType = ModVillagers.NATION_4;
         } else if(stack.getItem() == Items.ICE){
             newType = ModVillagers.NATION_9;
