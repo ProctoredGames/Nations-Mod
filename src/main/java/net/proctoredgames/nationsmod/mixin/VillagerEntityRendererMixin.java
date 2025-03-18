@@ -3,10 +3,7 @@ package net.proctoredgames.nationsmod.mixin;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.render.entity.VillagerEntityRenderer;
-import net.minecraft.client.render.entity.feature.FeatureRendererContext;
-import net.minecraft.client.render.entity.feature.HeadFeatureRenderer;
-import net.minecraft.client.render.entity.feature.VillagerClothingFeatureRenderer;
-import net.minecraft.client.render.entity.feature.VillagerHeldItemFeatureRenderer;
+import net.minecraft.client.render.entity.feature.*;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayers;
 import net.minecraft.client.render.entity.model.VillagerResemblingModel;
@@ -27,12 +24,15 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.random.RandomGenerator;
 
 @Mixin(VillagerEntityRenderer.class)
 public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<VillagerEntity, EntityModel<VillagerEntity>> {
     private EntityRendererFactory.Context context;
+    private EntityModel<VillagerEntity> defaultModel; // Store the default model
 
     public VillagerEntityRendererMixin(EntityRendererFactory.Context context) {
         super(context, new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER)), 0.5F);
@@ -41,6 +41,7 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
     @Inject(method = "<init>", at = @At("TAIL"), cancellable = false)
     public void editInit(EntityRendererFactory.Context context, CallbackInfo ci) {
         this.context = context;
+        this.defaultModel = this.model; // Store the default model
     }
 
     @Inject(method = "getTexture", at = @At("HEAD"), cancellable = true)
@@ -48,23 +49,17 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
         if(villager instanceof NationBased && context != null){
             int nationNumber = ((NationBased) villager).getNation();
 
-            EntityModel<VillagerEntity> oldModel = super.model;
-            EntityModel<VillagerEntity> newModel = null;
-            this.features.clear();
-            switch(nationNumber){
-                case 3:
-                    newModel = new Nation3Villager(context.getPart(Nation3Villager.NATION_3_VILLAGER));
-                    this.features.add(new VillagerHeldItemFeatureRenderer(this, context.getHeldItemRenderer()));
-                    break;
-                default:
-                    newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
-                    this.addFeature(new HeadFeatureRenderer<>((FeatureRendererContext) this, context.getModelLoader(), context.getHeldItemRenderer()));
-                    this.addFeature(new VillagerClothingFeatureRenderer<>((FeatureRendererContext) this, context.getResourceManager(), "villager"));
-                    this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
-                    break;
+            if (nationNumber == 3) {
+                this.model = new Nation3Villager(context.getPart(Nation3Villager.NATION_3_VILLAGER));
+                this.features.clear();
+                this.features.add(new VillagerHeldItemFeatureRenderer((FeatureRendererContext<VillagerEntity, EntityModel<VillagerEntity>>) this, context.getHeldItemRenderer()));
+            } else {
+                // Reset to the default model and features for other nations
+                this.model = defaultModel;
+                this.addFeature(new HeadFeatureRenderer<>((FeatureRendererContext) this, context.getModelLoader(), context.getHeldItemRenderer()));
+                this.addFeature(new VillagerClothingFeatureRenderer<>((FeatureRendererContext) this, context.getResourceManager(), "villager"));
+                this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
             }
-            oldModel.copyStateTo(newModel);  // or newModel.copyStateFrom(oldModel)
-            super.model = newModel;
 
             Identifier texture = switch (nationNumber) {
                 case 3 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/type/nation_3.png");
@@ -78,7 +73,6 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
     }
 
     public Identifier getNation4VillagerTexture(VillagerProfession profession, VillagerType type) {
-        Random random = new Random();
         if (profession.equals(VillagerProfession.FARMER)) {
             return Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/type/nation_4_farmer.png");
         } else if (profession.equals(VillagerProfession.FISHERMAN)) {
