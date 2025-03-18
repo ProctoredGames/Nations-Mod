@@ -47,6 +47,7 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
     private void getModifiedAppearance(VillagerEntity villager, CallbackInfoReturnable<Identifier> cir) {
         if(villager instanceof NationBased && context != null){
             int nationNumber = ((NationBased) villager).getNation();
+
             switch(nationNumber){
                 case 3:
                     this.features.clear();
@@ -55,8 +56,8 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
                     break;
                 default:
                     super.model = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
-                    this.addFeature(new HeadFeatureRenderer<>(this, context.getModelLoader(), context.getHeldItemRenderer()));
-                    this.addFeature(new VillagerClothingFeatureRenderer<>(this, context.getResourceManager(), "villager"));
+                    this.addFeature(new HeadFeatureRenderer<>((FeatureRendererContext) this, context.getModelLoader(), context.getHeldItemRenderer()));
+                    this.addFeature(new VillagerClothingFeatureRenderer<>((FeatureRendererContext) this, context.getResourceManager(), "villager"));
                     this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
                     break;
             }
