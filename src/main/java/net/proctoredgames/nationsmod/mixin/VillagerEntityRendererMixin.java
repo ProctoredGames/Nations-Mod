@@ -48,19 +48,23 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
         if(villager instanceof NationBased && context != null){
             int nationNumber = ((NationBased) villager).getNation();
 
+            EntityModel<VillagerEntity> oldModel = super.model;
+            EntityModel<VillagerEntity> newModel = null;
+            this.features.clear();
             switch(nationNumber){
                 case 3:
-                    this.features.clear();
-                    super.model = new Nation3Villager(context.getPart(Nation3Villager.NATION_3_VILLAGER));
+                    newModel = new Nation3Villager(context.getPart(Nation3Villager.NATION_3_VILLAGER));
                     this.features.add(new VillagerHeldItemFeatureRenderer(this, context.getHeldItemRenderer()));
                     break;
                 default:
-                    super.model = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
+                    newModel = new VillagerResemblingModel<>(context.getPart(EntityModelLayers.VILLAGER));
                     this.addFeature(new HeadFeatureRenderer<>((FeatureRendererContext) this, context.getModelLoader(), context.getHeldItemRenderer()));
                     this.addFeature(new VillagerClothingFeatureRenderer<>((FeatureRendererContext) this, context.getResourceManager(), "villager"));
                     this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
                     break;
             }
+            oldModel.copyStateTo(newModel);  // or newModel.copyStateFrom(oldModel)
+            super.model = newModel;
 
             Identifier texture = switch (nationNumber) {
                 case 3 -> Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/type/nation_3.png");
