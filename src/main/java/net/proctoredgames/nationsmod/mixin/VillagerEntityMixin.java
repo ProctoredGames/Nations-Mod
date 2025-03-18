@@ -63,7 +63,7 @@ public abstract class VillagerEntityMixin extends PassiveEntity implements Natio
             // Set new VillagerData but keep profession and level the same
             villager.setVillagerData(new VillagerData(
                     newType,        // New biome type (controls skin)
-                    newType == ModVillagers.NATION_3 && oldData.getProfession() == VillagerProfession.BUTCHER ? ModVillagers.NATION_9_BUTCHER : oldData.getProfession(), // Keep current profession
+                    (newType == ModVillagers.NATION_3 && oldData.getProfession() == VillagerProfession.BUTCHER) ? ModVillagers.NATION_9_BUTCHER : oldData.getProfession(), // Keep current profession
                     oldData.getLevel() // Keep current level
             ));
 
