@@ -20,6 +20,8 @@ public class ModVillagers {
 //    public static final RegistryKey<PointOfInterestType> KAUPEN_POI_KEY = registerPoiKey("kaupen_poi");
 //    public static final PointOfInterestType KAUPEN_POI = registerPOI("kaupen_poi", ModBlocks.CHAIR);
 
+    public static final VillagerType FAE = registerType("fae");
+
     public static final VillagerType NATION_1 = registerType("nation_1");
     public static final VillagerType NATION_2 = registerType("nation_2");
     public static final VillagerType NATION_3 = registerType("nation_3");

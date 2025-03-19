@@ -45,7 +45,9 @@ public abstract class VillagerEntityMixin extends PassiveEntity implements Natio
 
         Random random = new Random();
         VillagerType newType = null;
-        if(stack.getItem() == Items.PINK_PETALS){
+        if(stack.getItem() == Items.PINK_DYE){
+            newType = ModVillagers.FAE;
+        } else if(stack.getItem() == Items.PINK_PETALS){
             newType = ModVillagers.NATION_3;
         } else if(stack.getItem() == Items.PRISMARINE_SHARD){
             if(random.nextBoolean()){
@@ -84,7 +86,9 @@ public abstract class VillagerEntityMixin extends PassiveEntity implements Natio
     public int getNation(){
         VillagerType type = this.getVillagerData().getType();
         int nation = 0;
-        if(type == ModVillagers.NATION_1){
+        if(type == ModVillagers.FAE){
+            nation = -1;
+        } else if(type == ModVillagers.NATION_1){
             nation = 1;
         } else if(type == ModVillagers.NATION_2){
             nation = 2;

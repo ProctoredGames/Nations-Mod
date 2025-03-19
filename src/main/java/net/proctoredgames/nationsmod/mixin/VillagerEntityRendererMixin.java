@@ -16,6 +16,7 @@ import net.proctoredgames.nationsmod.NationsMod;
 import net.proctoredgames.nationsmod.NationBased;
 //import net.proctoredgames.nationsmod.entity.client.villagers.Nation4FishermanVillager;
 //import net.proctoredgames.nationsmod.entity.client.villagers.Nation4LibrarianVillager;
+import net.proctoredgames.nationsmod.entity.client.villagers.Fae;
 import net.proctoredgames.nationsmod.entity.client.villagers.Nation3Villager;
 import net.proctoredgames.nationsmod.villager.ModVillagers;
 import org.spongepowered.asm.mixin.Mixin;
@@ -49,7 +50,11 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
         if(villager instanceof NationBased && context != null){
             int nationNumber = ((NationBased) villager).getNation();
 
-            if (nationNumber == 3) {
+            if (nationNumber == -1) {
+                this.model = new Fae(context.getPart(Fae.FAE));
+                this.features.clear();
+                this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
+            } else if (nationNumber == 3) {
                 this.model = new Nation3Villager(context.getPart(Nation3Villager.NATION_3_VILLAGER));
                 this.features.clear();
                 this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
