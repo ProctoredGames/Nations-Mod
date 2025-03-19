@@ -77,7 +77,9 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
                 this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
             }
             Identifier texture = Identifier.ofVanilla("textures/entity/villager/villager.png");
-            if(nationNumber == 3){
+            if(nationNumber == -1) {
+                texture = Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/type/fae.png");
+            } else if(nationNumber == 3){
                 texture = Identifier.of(NationsMod.MOD_ID, "textures/entity/villager/type/nation_3.png");
             } else if(nationNumber == 4){
                 texture = getNation4VillagerTexture(villager.getVillagerData().getProfession(), villager.getVillagerData().getType());
