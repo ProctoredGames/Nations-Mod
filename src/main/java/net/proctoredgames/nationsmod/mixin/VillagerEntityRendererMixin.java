@@ -52,7 +52,7 @@ public abstract class VillagerEntityRendererMixin extends MobEntityRenderer<Vill
             if (nationNumber == 3) {
                 this.model = new Nation3Villager(context.getPart(Nation3Villager.NATION_3_VILLAGER));
                 this.features.clear();
-                this.features.add(new VillagerHeldItemFeatureRenderer((FeatureRendererContext<VillagerEntity, EntityModel<VillagerEntity>>) this, context.getHeldItemRenderer()));
+                this.features.add(new VillagerHeldItemFeatureRenderer(this, context.getHeldItemRenderer()));
             }else if (nationNumber == 4) {
                 this.model = defaultModel;
                 this.features.clear();
