@@ -40,17 +40,17 @@ public class Nation3Villager extends EntityModel<VillagerEntity> {
     private final ModelPart bone12;
     public Nation3Villager(ModelPart root) {
         this.body = root.getChild("body");
-        this.left_wing = this.body.getChild("left_wing");
+        this.left_wing = root.getChild("left_wing");
         this.bone6 = this.left_wing.getChild("bone6");
-        this.right_wing = this.body.getChild("right_wing");
+        this.right_wing = root.getChild("right_wing");
         this.bone7 = this.right_wing.getChild("bone7");
-        this.front_legs = this.body.getChild("front_legs");
-        this.middle_legs = this.body.getChild("middle_legs");
-        this.back_legs = this.body.getChild("back_legs");
-        this.left_antenna = this.body.getChild("left_antenna");
-        this.stinger = this.body.getChild("stinger");
-        this.right_antenna = this.body.getChild("right_antenna");
-        this.torso = this.body.getChild("torso");
+        this.front_legs = root.getChild("front_legs");
+        this.middle_legs = root.getChild("middle_legs");
+        this.back_legs = root.getChild("back_legs");
+        this.left_antenna = root.getChild("left_antenna");
+        this.stinger = root.getChild("stinger");
+        this.right_antenna = root.getChild("right_antenna");
+        this.torso = root.getChild("torso");
         this.bone = this.torso.getChild("bone");
         this.bone4 = this.bone.getChild("bone4");
         this.bone15 = this.bone4.getChild("bone15");
@@ -70,27 +70,27 @@ public class Nation3Villager extends EntityModel<VillagerEntity> {
         ModelPartData modelPartData = modelData.getRoot();
         ModelPartData body = modelPartData.addChild("body", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
 
-        ModelPartData left_wing = body.addChild("left_wing", ModelPartBuilder.create().uv(0, 16).cuboid(0.0F, 0.0F, 0.0F, 9.0F, 0.0F, 6.0F, new Dilation(0.0F)), ModelTransform.pivot(1.5F, 15.0F, -3.0F));
+        ModelPartData left_wing = modelPartData.addChild("left_wing", ModelPartBuilder.create().uv(0, 16).cuboid(0.0F, 0.0F, 0.0F, 9.0F, 0.0F, 6.0F, new Dilation(0.0F)), ModelTransform.pivot(1.5F, 15.0F, -3.0F));
 
         ModelPartData bone6 = left_wing.addChild("bone6", ModelPartBuilder.create().uv(24, 22).cuboid(1.5F, -8.5381F, -3.1913F, 9.0F, 0.0F, 6.0F, new Dilation(0.0F)), ModelTransform.of(-1.5F, 6.4F, 4.7F, 0.3927F, 0.0F, 0.0F));
 
-        ModelPartData right_wing = body.addChild("right_wing", ModelPartBuilder.create().uv(24, 28).cuboid(-9.0F, 0.0F, 0.0F, 9.0F, 0.0F, 6.0F, new Dilation(0.0F)), ModelTransform.pivot(-1.5F, 15.0F, -3.0F));
+        ModelPartData right_wing = modelPartData.addChild("right_wing", ModelPartBuilder.create().uv(24, 28).cuboid(-9.0F, 0.0F, 0.0F, 9.0F, 0.0F, 6.0F, new Dilation(0.0F)), ModelTransform.pivot(-1.5F, 15.0F, -3.0F));
 
         ModelPartData bone7 = right_wing.addChild("bone7", ModelPartBuilder.create().uv(30, 16).cuboid(-10.5F, -9.0F, -3.0F, 9.0F, 0.0F, 6.0F, new Dilation(0.0F)), ModelTransform.of(1.5F, 7.0F, 4.0F, 0.3491F, 0.0F, 0.0F));
 
-        ModelPartData front_legs = body.addChild("front_legs", ModelPartBuilder.create(), ModelTransform.pivot(1.5F, 22.0F, -2.0F));
+        ModelPartData front_legs = modelPartData.addChild("front_legs", ModelPartBuilder.create(), ModelTransform.pivot(1.5F, 22.0F, -2.0F));
 
-        ModelPartData middle_legs = body.addChild("middle_legs", ModelPartBuilder.create(), ModelTransform.pivot(1.5F, 22.0F, 0.0F));
+        ModelPartData middle_legs = modelPartData.addChild("middle_legs", ModelPartBuilder.create(), ModelTransform.pivot(1.5F, 22.0F, 0.0F));
 
-        ModelPartData back_legs = body.addChild("back_legs", ModelPartBuilder.create(), ModelTransform.pivot(1.5F, 22.0F, 2.0F));
+        ModelPartData back_legs = modelPartData.addChild("back_legs", ModelPartBuilder.create(), ModelTransform.pivot(1.5F, 22.0F, 2.0F));
 
-        ModelPartData left_antenna = body.addChild("left_antenna", ModelPartBuilder.create().uv(24, 41).cuboid(1.5F, -13.25F, -7.0F, 1.0F, 4.0F, 3.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 17.0F, -5.0F));
+        ModelPartData left_antenna = modelPartData.addChild("left_antenna", ModelPartBuilder.create().uv(24, 41).cuboid(1.5F, -13.25F, -7.0F, 1.0F, 4.0F, 3.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 17.0F, -5.0F));
 
-        ModelPartData stinger = body.addChild("stinger", ModelPartBuilder.create().uv(8, 48).cuboid(0.0F, 2.5F, 5.25F, 0.0F, 1.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 19.0F, 0.0F));
+        ModelPartData stinger = modelPartData.addChild("stinger", ModelPartBuilder.create().uv(8, 48).cuboid(0.0F, 2.5F, 5.25F, 0.0F, 1.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 19.0F, 0.0F));
 
-        ModelPartData right_antenna = body.addChild("right_antenna", ModelPartBuilder.create().uv(32, 41).cuboid(-2.5F, -13.25F, -7.0F, 1.0F, 4.0F, 3.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 17.0F, -5.0F));
+        ModelPartData right_antenna = modelPartData.addChild("right_antenna", ModelPartBuilder.create().uv(32, 41).cuboid(-2.5F, -13.25F, -7.0F, 1.0F, 4.0F, 3.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 17.0F, -5.0F));
 
-        ModelPartData torso = body.addChild("torso", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 19.0F, 0.0F));
+        ModelPartData torso = modelPartData.addChild("torso", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 19.0F, 0.0F));
 
         ModelPartData bone = torso.addChild("bone", ModelPartBuilder.create().uv(0, 0).cuboid(-2.9F, -8.4217F, -5.2687F, 6.0F, 6.0F, 10.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 3.75F, -7.25F, -0.5672F, 0.0F, 0.0F));
 
