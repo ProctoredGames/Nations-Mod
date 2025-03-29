@@ -20,7 +20,7 @@ import org.slf4j.LoggerFactory;
 public class Adventurecraft implements ModInitializer {
 	public static final String MOD_ID = "adventurecraft";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-	public static final String KEY = "Developer - ProctoredGames (@proctoredgames on Discord)\nModels and textures by @pippslays on YT\nMade for the Empires SMP";
+	public static final String KEY = "Developer - ProctoredGames (@proctoredgames on Discord)\nModels and textures by @pippslays on YT\nMade for the Adventurecraft SMP";
 
 
 	@Override

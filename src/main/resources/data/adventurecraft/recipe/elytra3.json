@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smithing_trim",
+    "template": {},
+    "base": "minecraft:elytra",
+    "addition": "adventurecraft:essence_of_empire_3",
+    "result": {
+        "id": "adventurecraft:empire_3_elytra"
+    }
+}

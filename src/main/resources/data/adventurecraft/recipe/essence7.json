@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        "LBL",
+        " L "
+    ],
+    "key": {
+        "#": "minecraft:string",
+        "L": "minecraft:leather",
+        "B": "minecraft:oak_log"
+    },
+    "result": {
+        "id": "adventurecraft:essence_of_empire_7",
+        "count": 1
+    }
+}
