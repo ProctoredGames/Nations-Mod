@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "nationsmod:item/essence_of_nation_2"
-  }
-}

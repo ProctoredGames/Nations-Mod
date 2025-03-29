@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/handheld",
-  "textures": {
-    "layer0": "nationsmod:item/nation_9_netherite_shovel"
-  }
-}

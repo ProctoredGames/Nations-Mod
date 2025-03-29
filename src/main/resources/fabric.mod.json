@@ -1,33 +1,33 @@
 {
 	"schemaVersion": 1,
-	"id": "nationsmod",
+	"id": "adventurecraft",
 	"version": "${version}",
-	"name": "Nations Mod",
-	"description": "Mod for the Nations SMP",
+	"name": "Adventurecraft",
+	"description": "Mod for the Adventurecraft SMP",
 	"authors": [
 		"Mabli - Modeling and Texturing",
 		"ProctoredGames - Developer"
 	],
 	"contact": {
 		"homepage": "https://proctoredgames.net/",
-		"sources": "https://github.com/ProctoredGames/Nations-Mod"
+		"sources": "https://github.com/ProctoredGames/Empires-Mod"
 	},
 	"license": "ARR",
-	"icon": "assets/nationsmod/icon.png",
+	"icon": "assets/adventurecraft/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.proctoredgames.nationsmod.NationsMod"
+			"net.proctoredgames.adventurecraft.Adventurecraft"
 		],
 		"fabric-datagen": [
-			"net.proctoredgames.nationsmod.NationsModDataGenerator"
+			"net.proctoredgames.adventurecraft.AdventurecraftDataGenerator"
 		],
 		"client": [
-			"net.proctoredgames.nationsmod.NationsModClient"
+			"net.proctoredgames.adventurecraft.AdventurecraftClient"
 		]
 	},
 	"mixins": [
-		"nationsmod.mixins.json"
+		"adventurecraft.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.10",

@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "nationsmod:item/nation_2_iron_chestplate",
-    "layer1": "minecraft:trims/items/chestplate_trim_quartz"
-  }
-}

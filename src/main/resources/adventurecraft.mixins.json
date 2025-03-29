@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "net.proctoredgames.adventurecraft.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"ElytraFeatureRendererMixin",
+		"EnchantmentMixin",
+		"PlayerEntityEmpireElytraMixin",
+		"LivingEntityEmpireElytraMixin",
+		"AbstractClientPlayerEntityMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
