@@ -100,8 +100,6 @@ public abstract class ElytraFeatureRendererMixin <T extends LivingEntity, M exte
             case 7 -> Identifier.of(Adventurecraft.MOD_ID, "textures/entity/empire_7_elytra.png");
             case 8 -> Identifier.of(Adventurecraft.MOD_ID, "textures/entity/empire_8_elytra.png");
             case 9 -> Identifier.of(Adventurecraft.MOD_ID, "textures/entity/empire_9_elytra.png");
-            case -9 -> Identifier.of(Adventurecraft.MOD_ID, "textures/entity/empire_9_royal_elytra.png");
-            case 10 -> Identifier.of(Adventurecraft.MOD_ID, "textures/entity/empire_10_elytra.png");
             default -> Identifier.ofVanilla("textures/entity/elytra.png");
         };
         return texture;
