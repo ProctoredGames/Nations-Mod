@@ -1,9 +1,14 @@
 {
-    "type": "minecraft:smithing_trim",
-    "template": {},
-    "base": "minecraft:elytra",
-    "addition": "adventurecraft:essence_of_empire_1",
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "adventurecraft:essence_of_empire_1"
+    },
+    "base": {
+        "item": "minecraft:elytra"
+    },
     "result": {
+        "count": 1,
         "id": "adventurecraft:empire_1_elytra"
-    }
+    },
+    "template": {}
 }

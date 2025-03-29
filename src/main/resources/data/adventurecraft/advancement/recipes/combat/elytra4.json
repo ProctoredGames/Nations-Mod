@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_empire_essence": {
+      "conditions": {
+        "items": [
+          {
+            "items": "adventurecraft:essence_of_empire_4"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "adventurecraft:elytra4"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_empire_essence"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "adventurecraft:elytra4"
+    ]
+  }
+}

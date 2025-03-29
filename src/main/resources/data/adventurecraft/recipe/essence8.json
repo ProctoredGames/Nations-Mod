@@ -1,17 +1,24 @@
 {
     "type": "minecraft:crafting_shaped",
-    "pattern": [
-        " # ",
-        "LBL",
-        " L "
-    ],
+    "category": "equipment",
     "key": {
-        "#": "minecraft:string",
-        "L": "minecraft:leather",
-        "B": "minecraft:cyan_dye"
+        "#": {
+            "item": "minecraft:leather"
+        },
+        "X": {
+            "item": "minecraft:string"
+        },
+        "*": {
+            "item": "minecraft:cyan_dye"
+        }
     },
+    "pattern": [
+        " X ",
+        "#*#",
+        " # "
+    ],
     "result": {
-        "id": "adventurecraft:essence_of_empire_8",
-        "count": 1
+        "count": 1,
+        "id": "adventurecraft:essence_of_empire_8"
     }
 }

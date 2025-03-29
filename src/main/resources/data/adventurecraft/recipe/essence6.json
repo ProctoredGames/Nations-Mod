@@ -1,17 +1,24 @@
 {
     "type": "minecraft:crafting_shaped",
-    "pattern": [
-        " # ",
-        "LBL",
-        " L "
-    ],
+    "category": "equipment",
     "key": {
-        "#": "minecraft:string",
-        "L": "minecraft:leather",
-        "B": "minecraft:pink_wool"
+        "#": {
+            "item": "minecraft:leather"
+        },
+        "X": {
+            "item": "minecraft:string"
+        },
+        "*": {
+            "item": "minecraft:pink_wool"
+        }
     },
+    "pattern": [
+        " X ",
+        "#*#",
+        " # "
+    ],
     "result": {
-        "id": "adventurecraft:essence_of_empire_6",
-        "count": 1
+        "count": 1,
+        "id": "adventurecraft:essence_of_empire_6"
     }
 }
